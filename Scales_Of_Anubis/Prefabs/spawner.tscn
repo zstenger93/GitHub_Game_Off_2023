@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpxdwd2kiqmpx"]
+
+[ext_resource type="Script" path="res://Scripts/Spawner.gd" id="1_iwe68"]
+[ext_resource type="Texture2D" uid="uid://dqudcv7ywmcy2" path="res://Sprites/Effects/BlueEffects.png" id="1_q78sw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3bwkj"]
+atlas = ExtResource("1_q78sw")
+region = Rect2(352, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67i4l"]
+atlas = ExtResource("1_q78sw")
+region = Rect2(384, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1j5w"]
+atlas = ExtResource("1_q78sw")
+region = Rect2(416, 192, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2o8vm"]
+atlas = ExtResource("1_q78sw")
+region = Rect2(448, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qa2y5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3bwkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67i4l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1j5w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2o8vm")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="Spawner" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_qa2y5")
+script = ExtResource("1_iwe68")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
