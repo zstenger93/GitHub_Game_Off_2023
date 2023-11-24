@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=23 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
 [ext_resource type="Texture2D" uid="uid://bk76wrkh4kkro" path="res://Sprites/Player/TempPlayer.png" id="2_sdqgk"]
+[ext_resource type="PackedScene" uid="uid://bd0knb5lrunvn" path="res://Prefabs/UI.tscn" id="3_3bnxm"]
 [ext_resource type="Texture2D" uid="uid://rgsw5ddehacs" path="res://Sprites/Player/shield.png" id="3_co4du"]
 [ext_resource type="Texture2D" uid="uid://d3juvirb77qro" path="res://Sprites/Player/sword.png" id="4_8tk4p"]
 
@@ -146,6 +147,10 @@ shape = SubResource("RectangleShape2D_7v1nc")
 
 [node name="Camera" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
+
+[node name="Canvas" type="CanvasLayer" parent="Camera"]
+
+[node name="UI" parent="Camera/Canvas" instance=ExtResource("3_3bnxm")]
 
 [node name="shield" type="Sprite2D" parent="."]
 texture = ExtResource("3_co4du")

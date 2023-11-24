@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bd0knb5lrunvn"]
+
+[ext_resource type="Script" path="res://Scripts/UI.gd" id="1_7a2ev"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_waxvv"]
+font_size = 32
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7a2ev")
+
+[node name="EnemyCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_right = 80.0
+offset_bottom = 64.0
+text = "Test"
+label_settings = SubResource("LabelSettings_waxvv")
+horizontal_alignment = 1
+vertical_alignment = 1
