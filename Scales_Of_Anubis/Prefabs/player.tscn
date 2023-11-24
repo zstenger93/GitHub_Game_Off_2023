@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=18 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
 [ext_resource type="Texture2D" uid="uid://bk76wrkh4kkro" path="res://Sprites/Player/TempPlayer.png" id="2_sdqgk"]
@@ -122,6 +122,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7v1nc"]
+size = Vector2(24, 31)
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("2_jpjtu")
 
@@ -130,6 +133,8 @@ sprite_frames = SubResource("SpriteFrames_q5vxh")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_7v1nc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
