@@ -1,7 +1,26 @@
-[gd_scene format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=4 format=3 uid="uid://nbces0nfq65q"]
+
+[ext_resource type="Texture2D" uid="uid://dnppxlart5qvr" path="res://Sprites/Player/Coin_Icon.png" id="1_fldwf"]
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q5vxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fldwf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [node name="player" type="CharacterBody2D"]
+script = ExtResource("2_jpjtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_q5vxh")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="."]
