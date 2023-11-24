@@ -4,6 +4,10 @@ extends CharacterBody2D
 @onready var Target : CharacterBody2D = get_node("/root/MainScene/Player")
 @export var speed : float = 50.0
 
+func _ready():
+	var MainScene : Node2D = get_node("/root/MainScene")
+	MainScene.EnemyCount += 1
+
 func _physics_process(_delta):
 	if NavAgent.is_navigation_finished():
 		return
