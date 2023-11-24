@@ -2,16 +2,22 @@ extends CharacterBody2D
 
 @onready var sprite : AnimatedSprite2D = get_node("Sprite")
 @onready var shield : Sprite2D = get_node("shield")
+@onready var shieldCol : CollisionShape2D = get_node("shield/shieldCol")
+@onready var swordCol : CollisionShape2D = get_node("khopesh/swordCol")
 @onready var khopesh : Sprite2D = get_node("khopesh")
 
-var speed : float = 200.0
+var baseSpeed : float = 200.0
 var speedMP : float = 8.0
 var speedDIV : float = 3.0
 var shieldOffset : float = 12.0
 var khopeshOffset : float = 32.0
-var health: float = 100.0
+var health : float = 50.0
+var baseHealth : float = 100;
 
 func _physics_process(_delta):
+	var speed = baseSpeed - (baseHealth - health)
+	var size = baseHealth / health;
+	sprite.scale = Vector2(size, size)
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	if velocity.x != 0:
 		if velocity.x > 0 && velocity.x < (speed / speedDIV / 2):
@@ -49,10 +55,14 @@ func _physics_process(_delta):
 				velocity.x += speed
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - sprite.global_position).normalized()
+	shield.scale = Vector2(size, size)
+	khopesh.scale = Vector2(size, size)
+	shieldCol.scale = Vector2(size, size)
+	swordCol.scale = Vector2(size, size)
 	if Input.is_action_pressed("left_click_down"):
-		shield.position  = sprite.position + direction * shieldOffset
+		shield.position  = sprite.position + direction * shieldOffset * size
 		shield.look_at(mouse_position)
 	if Input.is_action_pressed("right_click_down"):
-		khopesh.position  = sprite.position + direction * khopeshOffset
+		khopesh.position  = sprite.position + direction * khopeshOffset * size
 		khopesh.look_at(mouse_position)
 	move_and_slide()
