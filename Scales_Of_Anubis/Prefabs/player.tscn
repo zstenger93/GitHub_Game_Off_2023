@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=5 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Texture2D" uid="uid://dnppxlart5qvr" path="res://Sprites/Player/Coin_Icon.png" id="1_fldwf"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
@@ -14,13 +14,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3vmkx"]
+radius = 46.0977
+
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("2_jpjtu")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_q5vxh")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3vmkx")
 
 [node name="Camera2D" type="Camera2D" parent="."]
