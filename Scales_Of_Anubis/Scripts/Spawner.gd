@@ -1,12 +1,15 @@
 extends AnimatedSprite2D
 
 @export var enemy = preload("res://Prefabs/enemy_base.tscn")
+@onready var gameController = get_node("/root/MainScene")
 @onready var sprite : AnimatedSprite2D = get_node(".")
+var i : int = 0
 
 func _on_timer_timeout():
 	var enemyInstance = enemy.instantiate()
+	enemyInstance.set_name("Enemy_" + name + "_" + str(i))
+	i += 1
 	add_child(enemyInstance)
-	print("test")
 
 func _ready():
 	sprite.play("default")

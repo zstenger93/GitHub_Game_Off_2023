@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jqwou"]
 size = Vector2(17, 28)
 
-[node name="EnemyBase" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_88lg0")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
@@ -32,5 +32,4 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_jqwou")
 
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
-path_desired_distance = 64.0
-target_desired_distance = 16.0
+path_max_distance = 200.0

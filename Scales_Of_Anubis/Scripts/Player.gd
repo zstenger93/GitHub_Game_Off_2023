@@ -8,12 +8,13 @@ var baseSpeed : float = 200.0
 var speedMP : float = 8.0
 var speedDIV : float = 3.0
 var shieldOffset : float = 12.0
-var khopeshOffset : float = 32.0
+var khopeshOffset : float = 16.0
 var health : float = 100.0
-var baseHealth : float = 100;
+var baseHealth : float = 100
+var damage : float = 10
 
-func take_damage(damage):
-	health -= damage
+func take_damage(_damage):
+	health -= _damage
 	sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	sprite.modulate = Color.WHITE
@@ -61,9 +62,7 @@ func _changeSize(size):
 	var direction = (mouse_position - sprite.global_position).normalized()
 	if size > 4:
 		size = 4
-	shield.scale = Vector2(size, size)
-	sprite.scale = Vector2(size, size)
-	khopesh.scale = Vector2(size, size)
+	scale = Vector2(size, size)
 	var distanceFromMouse = sprite.position.distance_to(mouse_position)
 	if Input.is_action_pressed("left_click_down"):
 		shield.position = sprite.position + direction * shieldOffset * size
@@ -75,9 +74,12 @@ func _changeSize(size):
 func _physics_process(_delta):
 	var speed = baseSpeed - (baseHealth - health)
 	var size = 1
-	if health != 0:
-		size = baseHealth / health;
+	size = baseHealth / health;
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	_movment(speed, totalVelocity)
 	_changeSize(size)
 	move_and_slide()
+
+func _on_Sword_enemy_body_entered(body):
+	if body.name.begins_with("Enemy"):
+		health += await body.take_damage(damage)

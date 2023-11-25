@@ -5,6 +5,6 @@ extends Control
 @onready var EnemyCountText : Label = get_node("EnemyCount")
 @onready var PlayerHealthText : Label = get_node("PlayerHealth")
 
-func _process(delta):
+func _process(_delta):
 	EnemyCountText.text = "Monsters: " + str(GameController.EnemyCount)
 	PlayerHealthText.text = "HP: " + str(Player.health)
