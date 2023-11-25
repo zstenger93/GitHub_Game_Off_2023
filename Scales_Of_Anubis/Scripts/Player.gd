@@ -2,8 +2,6 @@ extends CharacterBody2D
 
 @onready var sprite : AnimatedSprite2D = get_node("Sprite")
 @onready var shield : Sprite2D = get_node("shield")
-@onready var shieldCol : CollisionShape2D = get_node("shield/shieldCol")
-@onready var swordCol : CollisionShape2D = get_node("khopesh/swordCol")
 @onready var khopesh : Sprite2D = get_node("khopesh")
 
 var baseSpeed : float = 200.0
@@ -13,6 +11,14 @@ var shieldOffset : float = 12.0
 var khopeshOffset : float = 32.0
 var health : float = 50.0
 var baseHealth : float = 100;
+
+func take_damage(damage):
+	health -= damage
+	sprite.modulate = Color.RED
+	await get_tree().create_timer(0.1).timeout
+	sprite.modulate = Color.WHITE
+	if health <= 0:
+		get_tree().reload_current_scene()
 
 func _physics_process(_delta):
 	var speed = baseSpeed - (baseHealth - health)
@@ -57,8 +63,6 @@ func _physics_process(_delta):
 	var direction = (mouse_position - sprite.global_position).normalized()
 	shield.scale = Vector2(size, size)
 	khopesh.scale = Vector2(size, size)
-	shieldCol.scale = Vector2(size, size)
-	swordCol.scale = Vector2(size, size)
 	if Input.is_action_pressed("left_click_down"):
 		shield.position  = sprite.position + direction * shieldOffset * size
 		shield.look_at(mouse_position)
