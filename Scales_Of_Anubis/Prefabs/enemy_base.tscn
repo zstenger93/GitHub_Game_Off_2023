@@ -32,4 +32,6 @@ position = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_jqwou")
 
 [node name="NavAgent" type="NavigationAgent2D" parent="."]
+path_desired_distance = 30.0
 path_max_distance = 200.0
+debug_enabled = true
