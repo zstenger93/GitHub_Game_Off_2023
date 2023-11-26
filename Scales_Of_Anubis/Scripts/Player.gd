@@ -27,6 +27,30 @@ func take_damage(_damage):
 	if health <= 0:
 		get_tree().reload_current_scene()
 
+func _animationController(totalVelocity):
+	khopesh.z_index = 2
+	shield.z_index = 3
+	if (totalVelocity < 60):
+		sprite.play("idle")
+		sprite.z_index = 1
+	else:
+		if (velocity.x * velocity.x > velocity.y * velocity.y):
+			if (velocity.x < 0):
+				sprite.play("left")
+				sprite.z_index = 1
+			else:
+				sprite.play("right")
+				sprite.z_index = 1
+		else:
+			if (velocity.y < 0):
+				sprite.play("up")
+				sprite.z_index = 4
+			else:
+				sprite.z_index = 1
+				khopesh.z_index = 3
+				shield.z_index = 2
+				sprite.play("down")
+
 func _movment(speed, totalVelocity):
 	if velocity.x != 0:
 		if velocity.x > 0 && velocity.x < (speed / speedDIV / 2):
@@ -62,19 +86,6 @@ func _movment(speed, totalVelocity):
 		if velocity.x < speed * speedMP:
 			if totalVelocity < speed * speedMP:
 				velocity.x += speed	
-	if (totalVelocity < 30):
-		sprite.play("idle")
-	else:
-		if (velocity.x * velocity.x > velocity.y * velocity.y):
-			if (velocity.x < 0):
-				sprite.play("left")
-			else:
-				sprite.play("right")
-		else:
-			if (velocity.y < 0):
-				sprite.play("up")
-			else:
-				sprite.play("down")
 
 func _changeSize(size):
 	var mouse_position = get_global_mouse_position()
@@ -96,6 +107,7 @@ func _physics_process(_delta):
 	size = baseHealth / health;
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	_movment(speed, totalVelocity)
+	_animationController(totalVelocity)
 	_changeSize(size)
 	move_and_slide()
 
