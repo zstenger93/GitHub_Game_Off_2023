@@ -9,8 +9,8 @@ var speedMP : float = 8.0
 var speedDIV : float = 3.0
 var shieldOffset : float = 8.0
 var khopeshOffset : float = 15.0
-var health : float = 100.0
-var baseHealth : float = 100
+var health : float = 200.0
+var baseHealth : float = 200
 var damage : float = 10
 var passiveRegen : float = 5
 
@@ -107,6 +107,8 @@ func _physics_process(_delta):
 	size = baseHealth / health
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	health += passiveRegen / 60
+	if health > 350:
+		health = 350
 	_movment(speed, totalVelocity)
 	_animationController(totalVelocity)
 	_changeSize(size)
