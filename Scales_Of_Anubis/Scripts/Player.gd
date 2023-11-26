@@ -12,9 +12,12 @@ var khopeshOffset : float = 15.0
 var health : float = 100.0
 var baseHealth : float = 100
 var damage : float = 10
+var passiveRegen : float = 5
 
 func take_damage(_damage):
 	health -= _damage
+	if health <= 0:
+		get_tree().reload_current_scene()
 	if _damage != 0:
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
@@ -23,9 +26,6 @@ func take_damage(_damage):
 		shield.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		shield.modulate = Color.WHITE
-	
-	if health <= 0:
-		get_tree().reload_current_scene()
 
 func _animationController(totalVelocity):
 	khopesh.z_index = 2
@@ -104,8 +104,9 @@ func _changeSize(size):
 func _physics_process(_delta):
 	var speed = baseSpeed - (baseHealth - health)
 	var size = 1
-	size = baseHealth / health;
+	size = baseHealth / health
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
+	health += passiveRegen / 60
 	_movment(speed, totalVelocity)
 	_animationController(totalVelocity)
 	_changeSize(size)
@@ -113,7 +114,10 @@ func _physics_process(_delta):
 
 func _on_Sword_enemy_body_entered(body):
 	if body.name.begins_with("Enemy"):
-		health += await body.take_damage(damage)
+		await body.take_damage(damage)
+		health -= damage / 4
+		if (health <= 0):
+			get_tree().reload_current_scene()
 		
 func _on_Shield_enemy_body_entered(body):
 	if body.name.begins_with("Enemy"):
@@ -122,4 +126,3 @@ func _on_Shield_enemy_body_entered(body):
 func _on_Shield_col_area_exited(body):
 	if body.name.begins_with("Enemy"):
 		body.Damage = 5
-
