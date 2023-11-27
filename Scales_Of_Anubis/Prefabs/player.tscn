@@ -1,14 +1,16 @@
-[gd_scene load_steps=32 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=34 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Texture2D" uid="uid://cj0ode24t66w2" path="res://Sprites/Player/walkingForward.png" id="2_gh2i7"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
 [ext_resource type="Texture2D" uid="uid://cqgusbulmu00w" path="res://Sprites/Player/idle.png" id="2_xs8f6"]
-[ext_resource type="PackedScene" uid="uid://bd0knb5lrunvn" path="res://Prefabs/UI.tscn" id="3_3bnxm"]
 [ext_resource type="Texture2D" uid="uid://rgsw5ddehacs" path="res://Sprites/Player/shield.png" id="3_co4du"]
 [ext_resource type="Texture2D" uid="uid://d3juvirb77qro" path="res://Sprites/Player/sword.png" id="4_8tk4p"]
 [ext_resource type="Texture2D" uid="uid://bbnpicagfh1e4" path="res://Sprites/Player/walkingLeft.png" id="4_m6nmf"]
 [ext_resource type="Texture2D" uid="uid://exqs0nfq3jid" path="res://Sprites/Player/walkRight.png" id="5_h1oi5"]
 [ext_resource type="Texture2D" uid="uid://3s7eilrhgo8c" path="res://Sprites/Player/backwards.png" id="6_u7k0d"]
+[ext_resource type="Script" path="res://Prefabs/TextureProgressBar.gd" id="8_stjkb"]
+[ext_resource type="Texture2D" uid="uid://cbs2cjn1xg8j6" path="res://Sprites/Themes/over.png" id="9_nnko8"]
+[ext_resource type="Texture2D" uid="uid://cij11djuujest" path="res://Sprites/Themes/progress.png" id="10_sxu6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj1it"]
 atlas = ExtResource("2_gh2i7")
@@ -189,9 +191,18 @@ zoom = Vector2(5, 5)
 
 [node name="Canvas" type="CanvasLayer" parent="Camera"]
 
-[node name="UI" parent="Camera/Canvas" instance=ExtResource("3_3bnxm")]
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Camera/Canvas"]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 1290.0
+offset_bottom = 170.0
+scale = Vector2(0.5, 0.5)
+texture_over = ExtResource("9_nnko8")
+texture_progress = ExtResource("10_sxu6c")
+script = ExtResource("8_stjkb")
 
 [node name="khopesh" type="Sprite2D" parent="."]
+position = Vector2(1, 4)
 scale = Vector2(1, 0.960257)
 texture = ExtResource("4_8tk4p")
 

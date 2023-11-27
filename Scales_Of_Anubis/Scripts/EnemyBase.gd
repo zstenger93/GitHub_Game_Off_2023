@@ -22,17 +22,11 @@ func take_damage(_damage) -> float:
 	return _damage / 2
 #	return 0.0
 
-func pushed():
-	if NavAgent.is_navigation_finished():
-		return
-	var Direction = global_position.direction_to(NavAgent.get_next_path_position())
-	velocity = Direction * -Speed * 100
-	move_and_slide()
-
 func _try_attack():
 	var CurrentTime : float = Time.get_unix_time_from_system()
 	if CurrentTime - LastAttackTime >= AttackRate:
 		Target.take_damage(Damage)
+		
 		LastAttackTime = Time.get_unix_time_from_system()
 
 func _check_dist():

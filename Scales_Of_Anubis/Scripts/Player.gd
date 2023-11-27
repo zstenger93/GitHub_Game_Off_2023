@@ -9,7 +9,8 @@ var speedMP : float = 8.0
 var speedDIV : float = 3.0
 var shieldOffset : float = 8.0
 var khopeshOffset : float = 15.0
-var health : float = 200.0
+@export var health : float = 200.0
+@export var maxHealth : float = 350.0
 var baseHealth : float = 200
 var damage : float = 10
 var passiveRegen : float = 5
@@ -107,8 +108,8 @@ func _physics_process(_delta):
 	size = baseHealth / health
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	health += passiveRegen / 60
-	if health > 350:
-		health = 350
+	if health > maxHealth:
+		health = maxHealth
 	_movment(speed, totalVelocity)
 	_animationController(totalVelocity)
 	_changeSize(size)
@@ -119,6 +120,8 @@ func _on_Sword_enemy_body_entered(body):
 		await body.take_damage(damage)
 		health -= damage / 4
 		if (health <= 0):
+			health = 1
+			passiveRegen = 0
 			get_tree().reload_current_scene()
 		
 func _on_Shield_enemy_body_entered(body):
