@@ -37,16 +37,16 @@ layer_0/tile_data = PackedInt32Array(-589833, 720896, 1, -589832, 786432, 1, -58
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner" parent="Spawners" instance=ExtResource("3_m0yrt")]
-position = Vector2(0, -272)
+position = Vector2(448, -240)
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource("3_m0yrt")]
-position = Vector2(-480, 0)
+position = Vector2(-448, -240)
 
 [node name="Spawner3" parent="Spawners" instance=ExtResource("3_m0yrt")]
-position = Vector2(480, 0)
+position = Vector2(448, 240)
 
 [node name="Spawner4" parent="Spawners" instance=ExtResource("3_m0yrt")]
-position = Vector2(0, 264)
+position = Vector2(-448, 240)
 
 [node name="MapNavLeft" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_qx7md")

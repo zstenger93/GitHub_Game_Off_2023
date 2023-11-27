@@ -1,9 +1,9 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://bv5k37whdaato"]
 
-[ext_resource type="Texture2D" uid="uid://dvda3q8onktqd" path="res://Sprites/tempsheet.png" id="1_nl4qm"]
+[ext_resource type="Texture2D" uid="uid://baykooy6m0jbx" path="res://Sprites/Map/newtempsheet.png" id="1_wux07"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qjp34"]
-texture = ExtResource("1_nl4qm")
+texture = ExtResource("1_wux07")
 texture_region_size = Vector2i(32, 32)
 use_texture_padding = false
 0:0/0 = 0
