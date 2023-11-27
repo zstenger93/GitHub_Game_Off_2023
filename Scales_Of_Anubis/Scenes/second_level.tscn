@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdinb8tv1std5"]
+[gd_scene load_steps=11 format=3 uid="uid://cdinb8tv1std5"]
 
 [ext_resource type="TileSet" uid="uid://bv5k37whdaato" path="res://Scenes/map_tile_set.tres" id="1_6ti6q"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_cbr87"]
 [ext_resource type="PackedScene" uid="uid://nbces0nfq65q" path="res://Prefabs/player.tscn" id="2_7u874"]
 [ext_resource type="PackedScene" uid="uid://cpxdwd2kiqmpx" path="res://Prefabs/spawner.tscn" id="4_onmtf"]
+[ext_resource type="PackedScene" uid="uid://b0ajrimbjppvh" path="res://Prefabs/white_skeleton.tscn" id="5_8l1ot"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0l1h0"]
 vertices = PackedVector2Array(-32, 88, -96, 88, -96, 24, -352, 24, -352, -32, -96, -32, -96, -96, -32, -96, 96, 24, -32, -368, 32, -368, 32, -96, 96, -96, 96, -32, 352, -32, 352, 24, 96, 88, 32, 88, 32, 368, -32, 368)
@@ -51,6 +52,7 @@ layer_0/tile_data = PackedInt32Array(1572841, 262144, 2, 1638377, 262144, 3, 157
 
 [node name="Spawner" parent="Spawners" instance=ExtResource("4_onmtf")]
 position = Vector2(-704, 696)
+enemy = ExtResource("5_8l1ot")
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource("4_onmtf")]
 position = Vector2(704, 696)

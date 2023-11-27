@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://diefg1gpq4oh1"]
+
+[ext_resource type="Script" path="res://Scripts/EnemyBase.gd" id="1_8kqk1"]
+[ext_resource type="Texture2D" uid="uid://dgs2xchwe18ou" path="res://Sprites/temp_enemy_sprites/Skeleton.png" id="3_a8dk5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uwva"]
+atlas = ExtResource("3_a8dk5")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mh6rm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uwva")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqwou"]
+size = Vector2(17, 28)
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_8kqk1")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mh6rm")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1)
+shape = SubResource("RectangleShape2D_jqwou")
+
+[node name="NavAgent" type="NavigationAgent2D" parent="."]
+path_desired_distance = 30.0
+path_max_distance = 200.0
+debug_enabled = true

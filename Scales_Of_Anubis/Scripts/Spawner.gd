@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-@export var enemy = preload("res://Prefabs/enemy_base.tscn")
+@export var enemy = load("res://Prefabs/enemy_base.tscn")
 @onready var gameController = get_node("/root/MainScene")
 @onready var sprite : AnimatedSprite2D = get_node(".")
 var i : int = 0

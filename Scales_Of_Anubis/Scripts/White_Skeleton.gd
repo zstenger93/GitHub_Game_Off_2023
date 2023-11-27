@@ -7,10 +7,10 @@ extends CharacterBody2D
 @onready var LastAttackTime : float = Time.get_unix_time_from_system()
 @onready var LastDamagedTime : float = Time.get_unix_time_from_system()
 @export var AttackRate : float = 3.0
-@export var AttackRange : float = 56.0
+@export var AttackRange : float = 60.0
 @export var Speed : float = 50.0
 @export var Damage : float = 5.0
-@export var Health : float = 20.0
+@export var Health : float = 10.0
 
 func take_damage(_damage) -> float:
 #	var CurrentTime : float = Time.get_unix_time_from_system()
