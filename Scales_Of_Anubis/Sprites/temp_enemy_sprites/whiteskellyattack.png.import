@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4w5umwsr3hlr"
-path="res://.godot/imported/dark skeleton attack.png-289ae558500cd335ec239d649d8354ba.ctex"
+uid="uid://bkxugdwwj17py"
+path="res://.godot/imported/whiteskellyattack.png-36cf5032058b31acc6067171176a93d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/temp_enemy_sprites/dark skeleton attack.png"
-dest_files=["res://.godot/imported/dark skeleton attack.png-289ae558500cd335ec239d649d8354ba.ctex"]
+source_file="res://Sprites/temp_enemy_sprites/whiteskellyattack.png"
+dest_files=["res://.godot/imported/whiteskellyattack.png-36cf5032058b31acc6067171176a93d8.ctex"]
 
 [params]
 
