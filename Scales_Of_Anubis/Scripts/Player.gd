@@ -8,18 +8,23 @@ var baseSpeed : float = 200.0
 var speedMP : float = 8.0
 var speedDIV : float = 3.0
 var shieldOffset : float = 8.0
-var khopeshOffset : float = 15.0
-@export var health : float = 200.0
+var khopeshOffset : float = 10.0
+@export var health : float = 350.0
 @export var maxHealth : float = 350.0
 var baseHealth : float = 200
 var damage : float = 10
-var passiveRegen : float = 5
+var scaleModifier : float = 0.05
+var passiveRegen : float = 2.0
+var size : float = 1.0
+var passiveScale : float = 0.01
+var thrown : int = 0
+var shieldBlockValue : int = 2
 
 func take_damage(_damage):
 	health -= _damage
 	if health <= 0:
 		get_tree().reload_current_scene()
-	if _damage != 0:
+	if _damage != shieldBlockValue:
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate = Color.WHITE
@@ -91,23 +96,38 @@ func _movment(speed, totalVelocity):
 func _changeSize(size):
 	var mouse_position = get_global_mouse_position()
 	var direction = (mouse_position - sprite.global_position).normalized()
-	if size > 4:
-		size = 4
 	scale = Vector2(size, size)
+	thrown = thrown + 1
 	var distanceFromMouse = sprite.position.distance_to(mouse_position)
 	if Input.is_action_pressed("left_click_down"):
 		shield.position = sprite.position + direction * shieldOffset * sqrt(size)
 		shield.look_at(mouse_position + direction * shieldOffset * size)
 	if Input.is_action_pressed("right_click_down"):
+		animate_swipe(khopesh, direction, khopeshOffset, size * 2, mouse_position)
+	else:
 		khopesh.position = sprite.position + direction * khopeshOffset * sqrt(size)
 		khopesh.look_at(mouse_position + direction * khopeshOffset * size)
 
+func animate_swipe(weapon, direction, offset, size, mouse_position):
+	var swipe_duration = 2  # Adjust the number of frames for the swipe animation
+	var delta_position = offset * sqrt(sqrt(size)) / swipe_duration
+	var target_position = sprite.position + direction * offset * sqrt(sqrt(size))
+	weapon.look_at(mouse_position + direction * offset * size)
+	for i in range(swipe_duration):
+		weapon.position += direction * delta_position
+		await get_tree().create_timer(0.1).timeout
+	weapon.position = target_position
+	weapon.look_at(mouse_position + direction * offset * size)
+
+
 func _physics_process(_delta):
-	var speed = baseSpeed - (baseHealth - health)
-	var size = 1
-	size = baseHealth / health
+	var speed = baseSpeed / size
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	health += passiveRegen / 60
+	if (size > 1):
+		size -= passiveScale / 60
+	if (size > 3.4):
+		get_tree().reload_current_scene()
 	if health > maxHealth:
 		health = maxHealth
 	_movment(speed, totalVelocity)
@@ -118,7 +138,7 @@ func _physics_process(_delta):
 func _on_Sword_enemy_body_entered(body):
 	if body.name.begins_with("Enemy"):
 		await body.take_damage(damage)
-		health -= damage / 4
+		size += scaleModifier;
 		if (health <= 0):
 			health = 1
 			passiveRegen = 0
@@ -126,8 +146,8 @@ func _on_Sword_enemy_body_entered(body):
 		
 func _on_Shield_enemy_body_entered(body):
 	if body.name.begins_with("Enemy"):
-		body.Damage = 0
+		body.Damage = shieldBlockValue
 
 func _on_Shield_col_area_exited(body):
 	if body.name.begins_with("Enemy"):
-		body.Damage = 5
+		body.Damage = body.OriginalDamage
