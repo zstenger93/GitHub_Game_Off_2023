@@ -9,8 +9,9 @@ extends CharacterBody2D
 @export var AttackRate : float = 3.0
 @export var AttackRange : float = 56.0
 @export var Speed : float = 50.0
-@export var Damage : float = 5.0
+@export var Damage : float = 15.0
 @export var Health : float = 20.0
+@export var OriginalDamage : float = 15.0
 
 func take_damage(_damage) -> float:
 #	var CurrentTime : float = Time.get_unix_time_from_system()
@@ -54,3 +55,4 @@ func _process(_delta):
 	if Health <= 0.0:
 		MainScene.EnemyCount -= 1
 		queue_free()
+
