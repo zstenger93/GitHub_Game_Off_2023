@@ -51,17 +51,29 @@ layer_0/tile_data = PackedInt32Array(1572841, 262144, 2, 1638377, 262144, 3, 157
 [node name="Spawners" type="Node" parent="."]
 
 [node name="Spawner" parent="Spawners" instance=ExtResource("4_onmtf")]
-position = Vector2(-704, 696)
+position = Vector2(-384, 384)
 enemy = ExtResource("5_8l1ot")
 
 [node name="Spawner2" parent="Spawners" instance=ExtResource("4_onmtf")]
-position = Vector2(704, 696)
+position = Vector2(384, 384)
 
 [node name="Spawner3" parent="Spawners" instance=ExtResource("4_onmtf")]
-position = Vector2(704, -712)
+position = Vector2(384, -384)
 
 [node name="Spawner4" parent="Spawners" instance=ExtResource("4_onmtf")]
-position = Vector2(-704, -712)
+position = Vector2(-384, -384)
+
+[node name="Spawner5" parent="Spawners" instance=ExtResource("4_onmtf")]
+position = Vector2(-704, -704)
+
+[node name="Spawner6" parent="Spawners" instance=ExtResource("4_onmtf")]
+position = Vector2(-704, 704)
+
+[node name="Spawner7" parent="Spawners" instance=ExtResource("4_onmtf")]
+position = Vector2(704, 704)
+
+[node name="Spawner8" parent="Spawners" instance=ExtResource("4_onmtf")]
+position = Vector2(704, -704)
 
 [node name="NavRegions" type="Node" parent="."]
 
