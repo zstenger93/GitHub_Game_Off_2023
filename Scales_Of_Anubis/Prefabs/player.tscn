@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=35 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Texture2D" uid="uid://cj0ode24t66w2" path="res://Sprites/Player/walkingForward.png" id="2_gh2i7"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
@@ -169,6 +169,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v1nc"]
 size = Vector2(21, 28)
 
+[sub_resource type="LabelSettings" id="LabelSettings_jw3a5"]
+font_size = 32
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0462"]
 size = Vector2(26, 8.3311)
 
@@ -187,7 +190,7 @@ position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_7v1nc")
 
 [node name="Camera" type="Camera2D" parent="."]
-zoom = Vector2(5, 5)
+zoom = Vector2(2.5, 2.5)
 
 [node name="Canvas" type="CanvasLayer" parent="Camera"]
 
@@ -196,10 +199,21 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 1290.0
 offset_bottom = 170.0
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.25, 0.25)
 texture_over = ExtResource("9_nnko8")
 texture_progress = ExtResource("10_sxu6c")
 script = ExtResource("8_stjkb")
+
+[node name="MapTimerLabel" type="Label" parent="Camera/Canvas"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 64.0
+text = "Test"
+label_settings = SubResource("LabelSettings_jw3a5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="khopesh" type="Sprite2D" parent="."]
 position = Vector2(1, 4)
@@ -220,6 +234,9 @@ texture = ExtResource("3_co4du")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shield/shieldCol"]
 position = Vector2(8.5, -0.5)
 shape = SubResource("RectangleShape2D_qjgm0")
+
+[node name="MapTimer" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="khopesh/swordCol" to="." method="_on_Sword_enemy_body_entered"]
 [connection signal="area_exited" from="shield/shieldCol" to="." method="_on_Shield_col_area_exited"]
