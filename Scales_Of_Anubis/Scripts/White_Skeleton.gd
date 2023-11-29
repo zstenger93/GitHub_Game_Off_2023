@@ -40,7 +40,6 @@ func _check_dist():
 
 func _ready():
 	MainScene.EnemyCount += 1
-	print(name)
 
 func _physics_process(_delta):
 	if NavAgent.is_navigation_finished():

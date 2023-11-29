@@ -14,11 +14,16 @@ var khopeshOffset : float = 10.0
 var baseHealth : float = 200
 var damage : float = 10
 var scaleModifier : float = 0.05
-var passiveRegen : float = 2.0
+var passiveRegen : float = 1.8
 var size : float = 1.0
 var passiveScale : float = 0.01
 var thrown : int = 0
 var shieldBlockValue : int = 5
+
+func changeSceneDeath():
+	var current_scene = get_tree().get_current_scene()
+	print(current_scene.name)
+	get_tree().reload_current_scene()
 
 func take_damage(_damage):
 	health -= _damage
@@ -127,7 +132,7 @@ func _physics_process(_delta):
 	if (size > 1):
 		size -= passiveScale / 60
 	if (size > 3.4):
-		get_tree().reload_current_scene()
+		changeSceneDeath()
 	if health > maxHealth:
 		health = maxHealth
 	_movment(speed, totalVelocity)
@@ -142,7 +147,7 @@ func _on_Sword_enemy_body_entered(body):
 		if (health <= 0):
 			health = 1
 			passiveRegen = 0
-			get_tree().reload_current_scene()
+			changeSceneDeath()
 		
 func _on_Shield_enemy_body_entered(body):
 	if body.name.begins_with("Enemy"):
