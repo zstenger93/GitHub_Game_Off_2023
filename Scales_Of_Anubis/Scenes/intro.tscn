@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://lruumompf1f5"]
+
+[ext_resource type="Script" path="res://Scripts/intro.gd" id="1_cpjjn"]
+[ext_resource type="Texture2D" uid="uid://b1airvx1vbilx" path="res://Sprites/Enemy/AnubiFlame.png" id="2_dapr8"]
+[ext_resource type="Texture2D" uid="uid://dvhhyxgtrqr7e" path="res://Sprites/Title Screen/scalesofanubis.png" id="3_qmus7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5wet"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2meg"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ne8ih"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82ksl"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7klb5"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_emc66"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_222sh"]
+atlas = ExtResource("2_dapr8")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xhsx6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5wet")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2meg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ne8ih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82ksl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7klb5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_emc66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_222sh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Theme" id="Theme_x65ny"]
+
+[node name="intro" type="Node2D"]
+script = ExtResource("1_cpjjn")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 1952.0
+offset_bottom = 1086.0
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -152.0
+offset_right = 1277.0
+offset_bottom = 1152.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_qmus7")
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1435, 601)
+scale = Vector2(30.3125, 30.3125)
+sprite_frames = SubResource("SpriteFrames_xhsx6")
+
+[node name="Start" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 85.0
+offset_top = 724.0
+offset_right = 885.0
+offset_bottom = 804.0
+theme = SubResource("Theme_x65ny")
+action_mode = 0
+text = "START"
+
+[node name="Tutorial" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 819.0
+offset_right = 886.0
+offset_bottom = 899.0
+text = "TUTORIAL"
+
+[node name="About" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 923.0
+offset_right = 883.0
+offset_bottom = 1003.0
+text = "ABOUT"

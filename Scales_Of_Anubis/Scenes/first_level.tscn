@@ -11,9 +11,9 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(-480, -272, -480, 272, -256, 272, -256, 176, -288, 176, -288, 104, -256, 104, -256, -112, -288, -112, -288, -184, -256, -184, -256, -272)])
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_2m6nu"]
-vertices = PackedVector2Array(-256, 272, -256, 176, -224, 176, 256, 272, -224, 104, -256, 104, -256, -112, -224, -112, -224, -184, -256, -184, -256, -272, 256, -272, 256, -184, 224, -184, 224, -112, 256, -112, 256, 104, 224, 104, 224, 176, 256, 176)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 9, 10, 11), PackedInt32Array(11, 12, 13), PackedInt32Array(8, 11, 13, 7), PackedInt32Array(7, 13, 14, 4), PackedInt32Array(14, 15, 16, 17), PackedInt32Array(4, 14, 17, 2), PackedInt32Array(2, 17, 18), PackedInt32Array(3, 2, 18), PackedInt32Array(3, 18, 19)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-256, 272, 256, 272, 256, 176, 224, 176, 224, 104, 256, 104, 256, -112, 224, -112, 224, -184, 256, -184, 256, -272, -256, -272, -256, -184, -224, -184, -224, -112, -256, -112, -256, 104, -224, 104, -224, 176, -256, 176)])
+vertices = PackedVector2Array(224, 176, 287, 176, 256, 272, -256, 272, -256, 176, -224, 176, -224, 104, 224, 104, -256, 104, -256, -112, -224, -112, 224, -112, -224, -184, -256, -184, -256, -272, 256, -272, 256, -184, 224, -184, 256, -112, 256, 104)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(3, 4, 5), PackedInt32Array(0, 3, 5), PackedInt32Array(0, 5, 6, 7), PackedInt32Array(6, 8, 9, 10), PackedInt32Array(7, 6, 10, 11), PackedInt32Array(12, 13, 14, 15), PackedInt32Array(15, 16, 17), PackedInt32Array(12, 15, 17, 10), PackedInt32Array(10, 17, 11), PackedInt32Array(7, 11, 18, 19)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-256, 272, 256, 272, 287, 176, 224, 176, 224, 104, 256, 104, 256, -112, 224, -112, 224, -184, 256, -184, 256, -272, -256, -272, -256, -184, -224, -184, -224, -112, -256, -112, -256, 104, -224, 104, -224, 176, -256, 176)])
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_ihyvo")
