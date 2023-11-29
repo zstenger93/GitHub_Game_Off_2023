@@ -20,9 +20,10 @@ var passiveScale : float = 0.01
 var thrown : int = 0
 var shieldBlockValue : int = 5
 
+
 func changeSceneDeath():
-	var current_scene = get_tree().get_current_scene()
-	print(current_scene.name)
+	var current_scene = get_parent().get_name()
+	print(current_scene)
 	get_tree().reload_current_scene()
 
 func take_damage(_damage):
@@ -126,6 +127,7 @@ func animate_swipe(weapon, direction, offset, size, mouse_position):
 
 
 func _physics_process(_delta):
+	print(GlobalVariable.sceneGlobal)
 	var speed = baseSpeed / size
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	health += passiveRegen / 60
