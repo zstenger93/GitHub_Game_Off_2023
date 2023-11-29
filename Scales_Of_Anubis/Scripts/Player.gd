@@ -22,14 +22,20 @@ var shieldBlockValue : int = 5
 
 
 func changeSceneDeath():
-	var current_scene = get_parent().get_name()
-	print(current_scene)
-	get_tree().reload_current_scene()
+	GlobalVariable.sceneGlobal = GlobalVariable.sceneGlobal - 1
+	print(GlobalVariable.sceneGlobal)
+	if GlobalVariable.sceneGlobal == 2:
+		get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
+	elif GlobalVariable.sceneGlobal == 1:
+		get_tree().change_scene_to_file("res://Scenes/first_level.tscn")
+	else:
+		GlobalVariable.sceneGlobal = 2
+		get_tree().change_scene_to_file("res://Scenes/intro.tscn")
 
 func take_damage(_damage):
 	health -= _damage
 	if health <= 0:
-		get_tree().reload_current_scene()
+		changeSceneDeath()
 	if _damage != shieldBlockValue:
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
@@ -127,7 +133,6 @@ func animate_swipe(weapon, direction, offset, size, mouse_position):
 
 
 func _physics_process(_delta):
-	print(GlobalVariable.sceneGlobal)
 	var speed = baseSpeed / size
 	var totalVelocity : float = sqrt(velocity.x * velocity.x + velocity.y * velocity.y)
 	health += passiveRegen / 60

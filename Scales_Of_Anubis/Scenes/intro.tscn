@@ -94,28 +94,28 @@ sprite_frames = SubResource("SpriteFrames_xhsx6")
 
 [node name="Start" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 85.0
-offset_top = 724.0
-offset_right = 885.0
-offset_bottom = 804.0
+offset_left = 80.0
+offset_top = 720.0
+offset_right = 880.0
+offset_bottom = 800.0
 theme = SubResource("Theme_x65ny")
 action_mode = 0
 text = "START"
 
 [node name="Tutorial" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 86.0
-offset_top = 819.0
-offset_right = 886.0
-offset_bottom = 899.0
+offset_left = 80.0
+offset_top = 820.0
+offset_right = 880.0
+offset_bottom = 900.0
 text = "TUTORIAL"
 
 [node name="About" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 83.0
-offset_top = 923.0
-offset_right = 883.0
-offset_bottom = 1003.0
+offset_left = 80.0
+offset_top = 920.0
+offset_right = 880.0
+offset_bottom = 1000.0
 text = "ABOUT"
 
 [connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]

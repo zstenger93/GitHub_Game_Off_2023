@@ -13,6 +13,6 @@ func _process(delta):
 	pass
 
 func _on_start_pressed():
-	get_tree().change_scene_to_file("res://Scenes/first_level.tscn")
+	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 
 

@@ -1,3 +1,3 @@
 extends Node
 
-var sceneGlobal : int = 0
+var sceneGlobal : int = 2
