@@ -117,3 +117,5 @@ offset_top = 923.0
 offset_right = 883.0
 offset_bottom = 1003.0
 text = "ABOUT"
+
+[connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]

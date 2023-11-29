@@ -18,7 +18,7 @@ var passiveRegen : float = 2.0
 var size : float = 1.0
 var passiveScale : float = 0.01
 var thrown : int = 0
-var shieldBlockValue : int = 2
+var shieldBlockValue : int = 5
 
 func take_damage(_damage):
 	health -= _damage
