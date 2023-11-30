@@ -19,4 +19,4 @@ func _process(delta):
 			get_tree().change_scene_to_file("res://Scenes/LevelCleared.tscn")
 		else:
 			GlobalVariable.sceneGlobal = 2
-			get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+			get_tree().change_scene_to_file("res://Scenes/GameWon.tscn")

@@ -30,7 +30,7 @@ func changeSceneDeath():
 		get_tree().change_scene_to_file("res://Scenes/first_level.tscn")
 	else:
 		GlobalVariable.sceneGlobal = 2
-		get_tree().change_scene_to_file("res://Scenes/intro.tscn")
+		get_tree().change_scene_to_file("res://Scenes/LoseGame.tscn")
 
 func take_damage(_damage):
 	health -= _damage
