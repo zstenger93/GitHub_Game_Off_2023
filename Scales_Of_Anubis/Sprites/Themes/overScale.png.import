@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by25gytocpv1p"
-path="res://.godot/imported/progressHealth.png-1049ff89f46b7ec7b3ac64feee73d8eb.ctex"
+uid="uid://r6q4mvihwwk"
+path="res://.godot/imported/overScale.png-789faf201342b8c75745b6d14c9b487f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Themes/progressHealth.png"
-dest_files=["res://.godot/imported/progressHealth.png-1049ff89f46b7ec7b3ac64feee73d8eb.ctex"]
+source_file="res://Sprites/Themes/overScale.png"
+dest_files=["res://.godot/imported/overScale.png-789faf201342b8c75745b6d14c9b487f.ctex"]
 
 [params]
 
