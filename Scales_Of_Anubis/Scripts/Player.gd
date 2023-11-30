@@ -3,7 +3,11 @@ extends CharacterBody2D
 @onready var sprite : AnimatedSprite2D = get_node("Sprite")
 @onready var shield : Sprite2D = get_node("shield")
 @onready var khopesh : Sprite2D = get_node("khopesh")
-@onready var audio : AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
+@onready var hurtsound : AudioStreamPlayer = get_node("Hurtsound")
+@onready var shieldsound : AudioStreamPlayer = get_node("ShieldSound")
+@onready var dead : AudioStreamPlayer = get_node("Dead")
+@onready var steps : AudioStreamPlayer = get_node("Steps")
+
 var baseSpeed : float = 200.0
 var speedMP : float = 8.0
 var speedDIV : float = 3.0
@@ -21,16 +25,17 @@ var thrown : int = 0
 var shieldBlockValue : int = 2
 
 
-
 func take_damage(_damage):
 	health -= _damage
 	if health <= 0:
 		get_tree().reload_current_scene()
 	if _damage != shieldBlockValue:
+		hurtsound.play()
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate = Color.WHITE
 	else:
+		shieldsound.play()
 		shield.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		shield.modulate = Color.WHITE
@@ -61,7 +66,6 @@ func _animationController(totalVelocity):
 
 func _movment(speed, totalVelocity):
 	if velocity.x != 0:
-		audio.play()
 		if velocity.x > 0 && velocity.x < (speed / speedDIV / 2):
 			velocity.x = 0
 		elif velocity.x < 0 && velocity.x > -(speed / speedDIV / 2):
