@@ -4,4 +4,8 @@
 
 ## Control
 
+- Movement: WASD
+- Sword swing: mouse movement
+- Sword throwing: right click
+
 ## About
