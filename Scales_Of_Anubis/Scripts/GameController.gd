@@ -14,9 +14,9 @@ func _process(delta):
 	if LevelTimer.is_stopped():
 		GlobalVariable.sceneGlobal = GlobalVariable.sceneGlobal + 1
 		if GlobalVariable.sceneGlobal == 2:
-			get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
+			get_tree().change_scene_to_file("res://Scenes/LevelCleared.tscn")
 		elif GlobalVariable.sceneGlobal == 3:
-			get_tree().change_scene_to_file("res://Scenes/third_level.tscn")
+			get_tree().change_scene_to_file("res://Scenes/LevelCleared.tscn")
 		else:
 			GlobalVariable.sceneGlobal = 2
 			get_tree().change_scene_to_file("res://Scenes/intro.tscn")

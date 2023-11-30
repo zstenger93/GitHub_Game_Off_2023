@@ -44,10 +44,10 @@ offset_bottom = 1088.0
 [node name="ColorRect" type="ColorRect" parent="UI"]
 layout_mode = 0
 offset_left = -28.0
-offset_top = 17.0
+offset_top = -3.0
 offset_right = 1924.0
 offset_bottom = 1103.0
-color = Color(0.0627451, 0.203922, 0, 1)
+color = Color(0.686275, 0.286275, 0, 1)
 
 [node name="Anubis" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(1463, 598)
@@ -77,6 +77,7 @@ offset_bottom = 26.0
 text = "Round duration: "
 
 [node name="SpawnRate" type="HSlider" parent="UI"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 500.0
 offset_right = 920.0
@@ -90,6 +91,7 @@ offset_bottom = 26.0
 text = "Spawn Rate:"
 
 [node name="ScaleModifier" type="HSlider" parent="UI"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 600.0
 offset_right = 920.0
@@ -103,6 +105,7 @@ offset_bottom = 26.0
 text = "Scale Modifier:"
 
 [node name="SpeedModifier" type="HSlider" parent="UI"]
+layout_mode = 0
 offset_left = 120.0
 offset_top = 700.0
 offset_right = 920.0

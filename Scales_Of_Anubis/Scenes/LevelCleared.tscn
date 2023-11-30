@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="LevelCleared" type="Node2D"]
@@ -81,23 +81,25 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_right = 1924.0
 offset_bottom = 1086.0
-color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+color = Color(1, 0.72549, 0, 1)
 
 [node name="Anubis" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(1458, 633)
+position = Vector2(1476, 633)
 scale = Vector2(28, 28)
 sprite_frames = SubResource("SpriteFrames_t6obq")
 
 [node name="Anubis2" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(496, 633)
+position = Vector2(446, 636)
 scale = Vector2(28, 28)
 sprite_frames = SubResource("SpriteFrames_t6obq")
 flip_h = true
 
 [node name="Button" type="Button" parent="UI"]
 layout_mode = 0
-offset_left = 581.0
-offset_top = 957.0
-offset_right = 1381.0
-offset_bottom = 1037.0
+offset_left = 803.0
+offset_top = 900.0
+offset_right = 1103.0
+offset_bottom = 980.0
 text = "CONTINUE"
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

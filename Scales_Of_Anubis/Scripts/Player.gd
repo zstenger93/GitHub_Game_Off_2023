@@ -118,7 +118,7 @@ func _changeSize(size):
 		animate_swipe(khopesh, direction, khopeshOffset, size * 2, mouse_position)
 	else:
 		khopesh.position = sprite.position + direction * khopeshOffset * sqrt(size)
-		khopesh.look_at(mouse_position + direction * khopeshOffset * size)
+		khopesh.look_at(mouse_position + direction * khopeshOffset * size * 3)
 
 func animate_swipe(weapon, direction, offset, size, mouse_position):
 	var swipe_duration = 2  # Adjust the number of frames for the swipe animation
