@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var LastDamagedTime : float = Time.get_unix_time_from_system()
 @export var AttackRate : float = 3.0
 @export var AttackRange : float = 59.0
-@export var Speed : float = 50.0
+@export var Speed : float = GlobalVariable.enemySpeed
 @export var Damage : float = 14.0
 @export var Health : float = 20.0
 @export var OriginalDamage : float = 15.0

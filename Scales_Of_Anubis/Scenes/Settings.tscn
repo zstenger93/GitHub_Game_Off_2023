@@ -1,0 +1,126 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx5m7kwfr4la7"]
+
+[ext_resource type="Texture2D" uid="uid://by5j7c5mup618" path="res://Sprites/Title Screen/alligator (2).png" id="1_2tiru"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_jgqcj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka1l"]
+atlas = ExtResource("1_2tiru")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whk1u"]
+atlas = ExtResource("1_2tiru")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijw0u"]
+atlas = ExtResource("1_2tiru")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kdob6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uka1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whk1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijw0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_jgqcj")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 17.0
+offset_right = 1924.0
+offset_bottom = 1103.0
+color = Color(0.0627451, 0.203922, 0, 1)
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1463, 598)
+scale = Vector2(30.3125, 30.3125)
+sprite_frames = SubResource("SpriteFrames_kdob6")
+
+[node name="Back" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 980.0
+offset_right = 140.0
+offset_bottom = 1060.0
+text = "BACK"
+
+[node name="Time" type="HSlider" parent="UI"]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 400.0
+offset_right = 920.0
+offset_bottom = 480.0
+allow_greater = true
+
+[node name="TimeLabel" type="Label" parent="UI/Time"]
+layout_mode = 0
+offset_right = 263.0
+offset_bottom = 26.0
+text = "Round duration: "
+
+[node name="SpawnRate" type="HSlider" parent="UI"]
+offset_left = 120.0
+offset_top = 500.0
+offset_right = 920.0
+offset_bottom = 580.0
+allow_greater = true
+
+[node name="SpawnLabel" type="Label" parent="UI/SpawnRate"]
+layout_mode = 0
+offset_right = 263.0
+offset_bottom = 26.0
+text = "Spawn Rate:"
+
+[node name="ScaleModifier" type="HSlider" parent="UI"]
+offset_left = 120.0
+offset_top = 600.0
+offset_right = 920.0
+offset_bottom = 680.0
+allow_greater = true
+
+[node name="ScaleLabel" type="Label" parent="UI/ScaleModifier"]
+layout_mode = 0
+offset_right = 263.0
+offset_bottom = 26.0
+text = "Scale Modifier:"
+
+[node name="SpeedModifier" type="HSlider" parent="UI"]
+offset_left = 120.0
+offset_top = 700.0
+offset_right = 920.0
+offset_bottom = 780.0
+allow_greater = true
+
+[node name="SpeedLabel" type="Label" parent="UI/SpeedModifier"]
+layout_mode = 0
+offset_right = 263.0
+offset_bottom = 26.0
+text = "Speed Modifier:"
+
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
+[connection signal="child_entered_tree" from="UI/Time" to="." method="_on_time_child_entered_tree"]
+[connection signal="value_changed" from="UI/Time" to="." method="_on_time_value_changed"]
+[connection signal="child_entered_tree" from="UI/SpawnRate" to="." method="_on_time_child_entered_tree"]
+[connection signal="value_changed" from="UI/SpawnRate" to="." method="_on_spawn_rate_value_changed"]
+[connection signal="child_entered_tree" from="UI/ScaleModifier" to="." method="_on_time_child_entered_tree"]
+[connection signal="value_changed" from="UI/ScaleModifier" to="." method="_on_scale_modifier_value_changed"]
+[connection signal="child_entered_tree" from="UI/SpeedModifier" to="." method="_on_time_child_entered_tree"]
+[connection signal="value_changed" from="UI/SpeedModifier" to="." method="_on_speed_modifier_value_changed"]

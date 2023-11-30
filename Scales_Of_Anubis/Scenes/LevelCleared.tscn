@@ -1,0 +1,103 @@
+[gd_scene load_steps=12 format=3 uid="uid://bk4i0nhjh3euk"]
+
+[ext_resource type="Texture2D" uid="uid://bm0mqjcxyfllr" path="res://Sprites/Title Screen/winscene.png" id="1_e60hr"]
+[ext_resource type="Script" path="res://Scenes/LevelCleared.gd" id="1_u05co"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jkng"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p17en"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2t73p"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8itky"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx7tt"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt3b3"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5exe"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6tkeg"]
+atlas = ExtResource("1_e60hr")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t6obq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jkng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p17en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2t73p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8itky")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx7tt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt3b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5exe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6tkeg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="LevelCleared" type="Node2D"]
+script = ExtResource("1_u05co")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1088.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1086.0
+color = Color(0.0352941, 0.0352941, 0.0352941, 1)
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1458, 633)
+scale = Vector2(28, 28)
+sprite_frames = SubResource("SpriteFrames_t6obq")
+
+[node name="Anubis2" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(496, 633)
+scale = Vector2(28, 28)
+sprite_frames = SubResource("SpriteFrames_t6obq")
+flip_h = true
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 581.0
+offset_top = 957.0
+offset_right = 1381.0
+offset_bottom = 1037.0
+text = "CONTINUE"
