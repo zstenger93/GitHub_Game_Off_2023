@@ -1,8 +1,31 @@
-[gd_scene load_steps=13 format=3 uid="uid://lruumompf1f5"]
+[gd_scene load_steps=17 format=3 uid="uid://lruumompf1f5"]
 
 [ext_resource type="Script" path="res://Scripts/intro.gd" id="1_cpjjn"]
 [ext_resource type="Texture2D" uid="uid://b1airvx1vbilx" path="res://Sprites/Enemy/AnubiFlame.png" id="2_dapr8"]
 [ext_resource type="Texture2D" uid="uid://dvhhyxgtrqr7e" path="res://Sprites/Title Screen/scalesofanubis.png" id="3_qmus7"]
+[ext_resource type="Texture2D" uid="uid://tqssgvx3inw1" path="res://Sprites/Title Screen/Bird flying.png" id="4_7kkii"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1se64"]
+atlas = ExtResource("4_7kkii")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txvb6"]
+atlas = ExtResource("4_7kkii")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ijyvw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1se64")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_txvb6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s5wet"]
 atlas = ExtResource("2_dapr8")
@@ -71,12 +94,19 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1927.0
 offset_bottom = 1088.0
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 layout_mode = 0
 offset_right = 1952.0
 offset_bottom = 1086.0
 color = Color(0, 0, 0, 1)
+
+[node name="RobertsDrawing" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(42.9297, 1051.07)
+scale = Vector2(1.00439, 1.00439)
+sprite_frames = SubResource("SpriteFrames_ijyvw")
+flip_h = true
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
 layout_mode = 0
