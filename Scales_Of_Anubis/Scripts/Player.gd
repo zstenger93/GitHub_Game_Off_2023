@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var sprite : AnimatedSprite2D = get_node("Sprite")
 @onready var shield : Sprite2D = get_node("shield")
 @onready var khopesh : Sprite2D = get_node("khopesh")
-
+@onready var audio : AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
 var baseSpeed : float = 200.0
 var speedMP : float = 8.0
 var speedDIV : float = 3.0
@@ -19,6 +19,8 @@ var size : float = 1.0
 var passiveScale : float = 0.01
 var thrown : int = 0
 var shieldBlockValue : int = 2
+
+
 
 func take_damage(_damage):
 	health -= _damage
@@ -59,6 +61,7 @@ func _animationController(totalVelocity):
 
 func _movment(speed, totalVelocity):
 	if velocity.x != 0:
+		audio.play()
 		if velocity.x > 0 && velocity.x < (speed / speedDIV / 2):
 			velocity.x = 0
 		elif velocity.x < 0 && velocity.x > -(speed / speedDIV / 2):
