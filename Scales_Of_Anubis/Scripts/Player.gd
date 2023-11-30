@@ -13,7 +13,7 @@ var khopeshOffset : float = 10.0
 @export var maxHealth : float = 350.0
 var baseHealth : float = 200
 var damage : float = 10
-var scaleModifier : float = 0.05
+var scaleModifier : float = GlobalVariable.scaleModifier
 var passiveRegen : float = 1.8
 @export var size : float = 1.0
 var passiveScale : float = 0.01
@@ -24,7 +24,6 @@ var shieldBlockValue : int = 5
 
 func changeSceneDeath():
 	GlobalVariable.sceneGlobal = GlobalVariable.sceneGlobal - 1
-	print(GlobalVariable.sceneGlobal)
 	if GlobalVariable.sceneGlobal == 2:
 		get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	elif GlobalVariable.sceneGlobal == 1:

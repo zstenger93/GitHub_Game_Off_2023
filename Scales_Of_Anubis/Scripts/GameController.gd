@@ -3,8 +3,8 @@ extends Node2D
 @onready var LevelTimer : Timer = get_node("/root/MainScene/Player/MapTimer")
 @onready var ProgressBarVal : TextureProgressBar = get_node("/root/MainScene/Player/Camera/Canvas/Time")
 @export var EnemyCount : int = 0
-@export var LevelTime : float = 60
-@export var MaxLevelTime : float = 60
+@export var LevelTime : float = GlobalVariable.timeLimit
+@export var MaxLevelTime : float = GlobalVariable.timeLimit
 
 func _ready():
 	LevelTimer.start(LevelTime)
