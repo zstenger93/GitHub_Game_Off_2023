@@ -8,6 +8,7 @@
 - If you kill too many enemies or get hit too many times you die
 - You regenerate your HP after not killing anything for 3 second
 - Enemies periodically getting faster
+- If you surive you go one level above, if not then below
 
 ## Control
 
