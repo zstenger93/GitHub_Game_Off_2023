@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0eelcy18mkv1" path="res://Sprites/Themes/progressHealth.png" id="8_8d2h1"]
 [ext_resource type="Script" path="res://Prefabs/TextureProgressBar.gd" id="8_stjkb"]
 [ext_resource type="Texture2D" uid="uid://cbs2cjn1xg8j6" path="res://Sprites/Themes/over.png" id="9_nnko8"]
+[ext_resource type="Script" path="res://Scripts/Time.gd" id="10_5n2ps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj1it"]
 atlas = ExtResource("2_gh2i7")
@@ -169,9 +170,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7v1nc"]
 size = Vector2(21, 28)
 
-[sub_resource type="LabelSettings" id="LabelSettings_jw3a5"]
-font_size = 32
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g0462"]
 size = Vector2(26, 8.3311)
 
@@ -199,21 +197,29 @@ offset_left = 10.0
 offset_top = 10.0
 offset_right = 1290.0
 offset_bottom = 170.0
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 texture_over = ExtResource("9_nnko8")
 texture_progress = ExtResource("8_8d2h1")
 script = ExtResource("8_stjkb")
 
-[node name="MapTimerLabel" type="Label" parent="Camera/Canvas"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -160.0
-offset_bottom = 64.0
-text = "Test"
-label_settings = SubResource("LabelSettings_jw3a5")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Time" type="TextureProgressBar" parent="Camera/Canvas"]
+offset_left = 10.0
+offset_top = 80.0
+offset_right = 1290.0
+offset_bottom = 240.0
+scale = Vector2(0.2, 0.2)
+texture_over = ExtResource("9_nnko8")
+texture_progress = ExtResource("8_8d2h1")
+
+[node name="Size" type="TextureProgressBar" parent="Camera/Canvas"]
+offset_left = 10.0
+offset_top = 45.0
+offset_right = 1290.0
+offset_bottom = 205.0
+scale = Vector2(0.2, 0.2)
+texture_over = ExtResource("9_nnko8")
+texture_progress = ExtResource("8_8d2h1")
+script = ExtResource("10_5n2ps")
 
 [node name="khopesh" type="Sprite2D" parent="."]
 position = Vector2(1, 4)

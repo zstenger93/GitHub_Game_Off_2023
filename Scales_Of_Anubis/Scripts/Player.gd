@@ -15,10 +15,11 @@ var baseHealth : float = 200
 var damage : float = 10
 var scaleModifier : float = 0.05
 var passiveRegen : float = 1.8
-var size : float = 1.0
+@export var size : float = 1.0
 var passiveScale : float = 0.01
 var thrown : int = 0
 var shieldBlockValue : int = 5
+@export var maxSize : float = 3.4
 
 
 func changeSceneDeath():
@@ -138,7 +139,7 @@ func _physics_process(_delta):
 	health += passiveRegen / 60
 	if (size > 1):
 		size -= passiveScale / 60
-	if (size > 3.4):
+	if (size > maxSize):
 		changeSceneDeath()
 	if health > maxHealth:
 		health = maxHealth
