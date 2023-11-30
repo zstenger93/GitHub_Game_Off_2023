@@ -8,9 +8,9 @@
 [ext_resource type="Texture2D" uid="uid://bbnpicagfh1e4" path="res://Sprites/Player/walkingLeft.png" id="4_m6nmf"]
 [ext_resource type="Texture2D" uid="uid://exqs0nfq3jid" path="res://Sprites/Player/walkRight.png" id="5_h1oi5"]
 [ext_resource type="Texture2D" uid="uid://3s7eilrhgo8c" path="res://Sprites/Player/backwards.png" id="6_u7k0d"]
+[ext_resource type="Texture2D" uid="uid://0eelcy18mkv1" path="res://Sprites/Themes/progressHealth.png" id="8_8d2h1"]
 [ext_resource type="Script" path="res://Prefabs/TextureProgressBar.gd" id="8_stjkb"]
 [ext_resource type="Texture2D" uid="uid://cbs2cjn1xg8j6" path="res://Sprites/Themes/over.png" id="9_nnko8"]
-[ext_resource type="Texture2D" uid="uid://cij11djuujest" path="res://Sprites/Themes/progress.png" id="10_sxu6c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj1it"]
 atlas = ExtResource("2_gh2i7")
@@ -201,7 +201,7 @@ offset_right = 1290.0
 offset_bottom = 170.0
 scale = Vector2(0.25, 0.25)
 texture_over = ExtResource("9_nnko8")
-texture_progress = ExtResource("10_sxu6c")
+texture_progress = ExtResource("8_8d2h1")
 script = ExtResource("8_stjkb")
 
 [node name="MapTimerLabel" type="Label" parent="Camera/Canvas"]
