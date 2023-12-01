@@ -17,3 +17,7 @@
 - Sword throwing: right click
 
 ## About
+
+In Egyptian belief, Anubis measured the hearts of the dead on the Scale of Justice (similar to the one in "The Substitute"),
+and weighs it against the feather of Ma'at, the God of justice.
+This process is said to determine whether or not the person to whom the heart belongs is worthy to enter the realm of the dead.
