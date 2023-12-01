@@ -2,6 +2,8 @@
 
 ## Scales of Anubis
 
+<img align=center src="https://github.com/zstenger93/GitHub_Game_Off_2023/blob/readme/scale.jpeg">
+
 ## Gameplay
 
 - You have to survive for 1 minute
