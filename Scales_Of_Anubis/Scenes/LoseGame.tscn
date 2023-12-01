@@ -251,6 +251,7 @@ layout_mode = 0
 offset_right = 1924.0
 offset_bottom = 1086.0
 color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="UI"]
 layout_mode = 0
@@ -259,6 +260,7 @@ offset_top = 465.0
 offset_right = 1296.0
 offset_bottom = 651.0
 text = "GAME OVER"
+metadata/_edit_use_anchors_ = true
 
 [node name="Anubis" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(960.467, 678)

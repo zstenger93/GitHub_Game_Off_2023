@@ -28,9 +28,9 @@ var shieldBlockValue : int = 5
 func changeSceneDeath():
 	GlobalVariable.sceneGlobal = GlobalVariable.sceneGlobal - 1
 	if GlobalVariable.sceneGlobal == 2:
-		get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
+		get_tree().change_scene_to_file("res://Scenes/StageLost.tscn")
 	elif GlobalVariable.sceneGlobal == 1:
-		get_tree().change_scene_to_file("res://Scenes/first_level.tscn")
+		get_tree().change_scene_to_file("res://Scenes/StageLost.tscn")
 	else:
 		GlobalVariable.sceneGlobal = 2
 		get_tree().change_scene_to_file("res://Scenes/LoseGame.tscn")

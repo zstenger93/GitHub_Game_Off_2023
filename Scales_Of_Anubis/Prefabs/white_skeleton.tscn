@@ -65,6 +65,27 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ln0eo")
 }],
 "loop": true,
 "name": &"attack",

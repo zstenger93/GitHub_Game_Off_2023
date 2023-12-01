@@ -1,0 +1,35 @@
+[gd_scene load_steps=2 format=3 uid="uid://cb4bftj1pg6iw"]
+
+[ext_resource type="Script" path="res://Scenes/StageLost.gd" id="1_us42l"]
+
+[node name="StageLost" type="Node2D"]
+script = ExtResource("1_us42l")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1088.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_right = 1924.0
+offset_bottom = 1086.0
+color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="Button" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 598.0
+offset_top = 831.0
+offset_right = 1296.0
+offset_bottom = 1017.0
+text = "CONTINUE"
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(960.467, 678)
+scale = Vector2(7.50833, 7.50833)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]

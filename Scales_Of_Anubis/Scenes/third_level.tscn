@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dwlmfu8h72b2d"]
+[gd_scene load_steps=17 format=3 uid="uid://dwlmfu8h72b2d"]
 
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_7gq1a"]
 [ext_resource type="TileSet" uid="uid://bv5k37whdaato" path="res://Scenes/map_tile_set.tres" id="2_miyti"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://canc17qpbmmjp" path="res://Audio/shield_sound.mp3" id="5_rbbwd"]
 [ext_resource type="PackedScene" uid="uid://c1cawir0qu8tp" path="res://Prefabs/enemy_base.tscn" id="5_t4mhh"]
 [ext_resource type="AudioStream" uid="uid://dya2k1s7gb7hx" path="res://Audio/dead.mp3" id="6_q5rhn"]
+[ext_resource type="PackedScene" uid="uid://b0ajrimbjppvh" path="res://Prefabs/white_skeleton.tscn" id="9_hpjvr"]
 [ext_resource type="AudioStream" uid="uid://0mdc5ruaxe1r" path="res://Audio/skeleton_hit.mp3" id="9_um41j"]
 [ext_resource type="AudioStream" uid="uid://cf13tfsqu46xp" path="res://Audio/gamesound.mp3" id="10_55mkl"]
 
@@ -114,6 +115,14 @@ enemy = ExtResource("5_t4mhh")
 [node name="Spawner6" parent="Spawners" instance=ExtResource("4_c0aa0")]
 position = Vector2(-416, -416)
 enemy = ExtResource("5_t4mhh")
+
+[node name="Spawner7" parent="Spawners" instance=ExtResource("4_c0aa0")]
+position = Vector2(381, 668)
+enemy = ExtResource("9_hpjvr")
+
+[node name="Spawner8" parent="Spawners" instance=ExtResource("4_c0aa0")]
+position = Vector2(-413, -677)
+enemy = ExtResource("9_hpjvr")
 
 [node name="HurtsoundSkeleton" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("9_um41j")
