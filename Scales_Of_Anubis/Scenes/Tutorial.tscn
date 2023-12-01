@@ -1,31 +1,170 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck41vuyuj78ln"]
+[gd_scene load_steps=29 format=3 uid="uid://ck41vuyuj78ln"]
 
 [ext_resource type="Script" path="res://Scripts/Tutorial.gd" id="1_40du3"]
-[ext_resource type="Texture2D" uid="uid://by5j7c5mup618" path="res://Sprites/Title Screen/alligator (2).png" id="2_7q4t2"]
+[ext_resource type="Texture2D" uid="uid://bokmpmfxu7se4" path="res://Sprites/Title Screen/new_health_bar (1).png" id="2_j3qeb"]
+[ext_resource type="Texture2D" uid="uid://bnbal5td4ja7t" path="res://Sprites/Title Screen/sword spining.png" id="3_o58cw"]
+[ext_resource type="Texture2D" uid="uid://cnh7fhkoditvi" path="res://Sprites/Title Screen/wasd.png" id="4_l8m40"]
+[ext_resource type="Texture2D" uid="uid://dpk50jlvgj0qj" path="res://Sprites/Player/shieldTut.png" id="5_ajioy"]
+[ext_resource type="Texture2D" uid="uid://b2ds7vsno1j7r" path="res://Sprites/Title Screen/barChartExample.png" id="6_7iut7"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uka1l"]
-atlas = ExtResource("2_7q4t2")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_k0rtv"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_whk1u"]
-atlas = ExtResource("2_7q4t2")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vw6i"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijw0u"]
-atlas = ExtResource("2_7q4t2")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukqy7"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_awld4"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y7eic"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qsnt1"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se4p1"]
+atlas = ExtResource("2_j3qeb")
+region = Rect2(256, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_icgsl"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uka1l")
+"texture": SubResource("AtlasTexture_k0rtv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_whk1u")
+"texture": SubResource("AtlasTexture_2vw6i")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ijw0u")
+"texture": SubResource("AtlasTexture_ukqy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7eic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsnt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se4p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se4p1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qsnt1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y7eic")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukqy7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vw6i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k0rtv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="FontVariation" id="FontVariation_q6cei"]
+
+[sub_resource type="FontVariation" id="FontVariation_5u0ib"]
+base_font = SubResource("FontVariation_q6cei")
+
+[sub_resource type="Theme" id="Theme_h6bsu"]
+default_base_scale = 3.3
+default_font = SubResource("FontVariation_5u0ib")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0yt48"]
+atlas = ExtResource("3_o58cw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qbqy"]
+atlas = ExtResource("3_o58cw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvhx5"]
+atlas = ExtResource("3_o58cw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auj5m"]
+atlas = ExtResource("3_o58cw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ci35"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0yt48")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qbqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fvhx5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auj5m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ogb1"]
+atlas = ExtResource("4_l8m40")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7ojl5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ogb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aqej2"]
+atlas = ExtResource("5_ajioy")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxwy1"]
+atlas = ExtResource("5_ajioy")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7h14c"]
+atlas = ExtResource("5_ajioy")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3d1nt"]
+atlas = ExtResource("5_ajioy")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4j0dt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aqej2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxwy1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7h14c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3d1nt")
 }],
 "loop": true,
 "name": &"default",
@@ -45,16 +184,11 @@ offset_bottom = 1088.0
 
 [node name="ColorRect" type="ColorRect" parent="UI"]
 layout_mode = 0
-offset_left = -28.0
-offset_top = -3.0
-offset_right = 1924.0
-offset_bottom = 1103.0
+offset_left = -31.0
+offset_top = -17.0
+offset_right = 1921.0
+offset_bottom = 1089.0
 color = Color(0.686275, 0.286275, 0, 1)
-
-[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(1463, 598)
-scale = Vector2(30.3125, 30.3125)
-sprite_frames = SubResource("SpriteFrames_awld4")
 
 [node name="Back" type="Button" parent="UI"]
 layout_mode = 0
@@ -63,5 +197,80 @@ offset_top = 980.0
 offset_right = 140.0
 offset_bottom = 1060.0
 text = "BACK"
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(454, 240)
+scale = Vector2(8.875, 8.875)
+sprite_frames = SubResource("SpriteFrames_icgsl")
+frame_progress = 0.203917
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+offset_left = 248.0
+offset_top = 410.0
+offset_right = 653.0
+offset_bottom = 490.0
+theme = SubResource("Theme_h6bsu")
+text = "On the Scales of Anubis, losing a level brings you closer to demise, while winning a level propels you toward eternal afterlife."
+autowrap_mode = 1
+
+[node name="Anubis2" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1001, 240)
+scale = Vector2(8.91797, 8.91797)
+sprite_frames = SubResource("SpriteFrames_4ci35")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="UI"]
+offset_left = 811.0
+offset_top = 410.0
+offset_right = 1216.0
+offset_bottom = 490.0
+theme = SubResource("Theme_h6bsu")
+text = "Swing this sword, Helicopter Man! The sword swings will follow your mouse movement, and you can        throw a sword on right-click."
+autowrap_mode = 1
+
+[node name="wasd" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1009, 781)
+scale = Vector2(6.60937, 6.60937)
+sprite_frames = SubResource("SpriteFrames_7ojl5")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="UI"]
+offset_left = 833.0
+offset_top = 898.0
+offset_right = 1185.0
+offset_bottom = 978.0
+theme = SubResource("Theme_h6bsu")
+text = "Move and dodge enemies with WASD keys."
+autowrap_mode = 1
+
+[node name="shield" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1473, 233)
+scale = Vector2(8.97656, 8.97656)
+sprite_frames = SubResource("SpriteFrames_4j0dt")
+frame_progress = 0.103817
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="UI"]
+offset_left = 1326.0
+offset_top = 410.0
+offset_right = 1653.0
+offset_bottom = 490.0
+theme = SubResource("Theme_h6bsu")
+text = "Use the shield to block 80% of incoming
+damage by clicking the left mouse button."
+autowrap_mode = 1
+
+[node name="BarChart" type="Sprite2D" parent="UI"]
+position = Vector2(467.333, 769)
+scale = Vector2(0.713805, 0.87963)
+texture = ExtResource("6_7iut7")
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="UI"]
+offset_left = 213.0
+offset_top = 893.0
+offset_right = 684.0
+offset_bottom = 1006.0
+theme = SubResource("Theme_h6bsu")
+text = "When hit by an enemy, your health decreases. On the other hand, hitting an enemy increases your scale. To emerge 
+victorious, you must run out of time before your scale or
+health depletes."
+autowrap_mode = 1
 
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]

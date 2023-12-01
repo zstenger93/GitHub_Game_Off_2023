@@ -1,31 +1,60 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqcmtuw6utnf1"]
+[gd_scene load_steps=9 format=3 uid="uid://dqcmtuw6utnf1"]
 
 [ext_resource type="Script" path="res://Scenes/About.gd" id="1_qkcu6"]
-[ext_resource type="Texture2D" uid="uid://by5j7c5mup618" path="res://Sprites/Title Screen/alligator (2).png" id="2_6y8bd"]
+[ext_resource type="Texture2D" uid="uid://cboepylvl851l" path="res://Sprites/Title Screen/scales (1).png" id="2_k7c1e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uka1l"]
-atlas = ExtResource("2_6y8bd")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfymq"]
+atlas = ExtResource("2_k7c1e")
+region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_whk1u"]
-atlas = ExtResource("2_6y8bd")
-region = Rect2(32, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h560n"]
+atlas = ExtResource("2_k7c1e")
+region = Rect2(64, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijw0u"]
-atlas = ExtResource("2_6y8bd")
-region = Rect2(64, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_7twcj"]
+atlas = ExtResource("2_k7c1e")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo72v"]
+atlas = ExtResource("2_k7c1e")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g8th"]
+atlas = ExtResource("2_k7c1e")
+region = Rect2(256, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_apf7h"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_uka1l")
+"texture": SubResource("AtlasTexture_wfymq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_whk1u")
+"texture": SubResource("AtlasTexture_h560n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ijw0u")
+"texture": SubResource("AtlasTexture_7twcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo72v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g8th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g8th")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo72v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7twcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h560n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfymq")
 }],
 "loop": true,
 "name": &"default",
@@ -52,8 +81,8 @@ offset_bottom = 1103.0
 color = Color(0.686275, 0.286275, 0, 1)
 
 [node name="Anubis" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(1463, 598)
-scale = Vector2(30.3125, 30.3125)
+position = Vector2(337, 239)
+scale = Vector2(8.875, 8.875)
 sprite_frames = SubResource("SpriteFrames_apf7h")
 
 [node name="Back" type="Button" parent="UI"]
