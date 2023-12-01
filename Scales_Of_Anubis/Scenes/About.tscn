@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://dqcmtuw6utnf1"]
+
+[ext_resource type="Script" path="res://Scenes/About.gd" id="1_qkcu6"]
+[ext_resource type="Texture2D" uid="uid://by5j7c5mup618" path="res://Sprites/Title Screen/alligator (2).png" id="2_6y8bd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uka1l"]
+atlas = ExtResource("2_6y8bd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_whk1u"]
+atlas = ExtResource("2_6y8bd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijw0u"]
+atlas = ExtResource("2_6y8bd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_apf7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uka1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_whk1u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijw0u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="About" type="Node2D"]
+script = ExtResource("1_qkcu6")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1927.0
+offset_bottom = 1088.0
+
+[node name="ColorRect" type="ColorRect" parent="UI"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -3.0
+offset_right = 1924.0
+offset_bottom = 1103.0
+color = Color(0.686275, 0.286275, 0, 1)
+
+[node name="Anubis" type="AnimatedSprite2D" parent="UI"]
+position = Vector2(1463, 598)
+scale = Vector2(30.3125, 30.3125)
+sprite_frames = SubResource("SpriteFrames_apf7h")
+
+[node name="Back" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 980.0
+offset_right = 140.0
+offset_bottom = 1060.0
+text = "BACK"
+
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
