@@ -1,26 +1,26 @@
-[gd_scene load_steps=17 format=3 uid="uid://lruumompf1f5"]
+[gd_scene load_steps=17 format=3 uid="uid://bpffit1dfr184"]
 
 [ext_resource type="Script" path="res://Scripts/intro.gd" id="1_cpjjn"]
 [ext_resource type="Texture2D" uid="uid://b1airvx1vbilx" path="res://Sprites/Enemy/AnubiFlame.png" id="2_dapr8"]
 [ext_resource type="Texture2D" uid="uid://dvhhyxgtrqr7e" path="res://Sprites/Title Screen/scalesofanubis.png" id="3_qmus7"]
-[ext_resource type="Texture2D" uid="uid://tqssgvx3inw1" path="res://Sprites/Title Screen/Bird flying.png" id="4_7kkii"]
+[ext_resource type="Texture2D" uid="uid://dkqd2sb31julh" path="res://Sprites/Title Screen/Bird flying.png" id="4_7kkii"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1se64"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_puwhd"]
 atlas = ExtResource("4_7kkii")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_txvb6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p12l3"]
 atlas = ExtResource("4_7kkii")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ijyvw"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xgpt"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1se64")
+"texture": SubResource("AtlasTexture_puwhd")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_txvb6")
+"texture": SubResource("AtlasTexture_p12l3")
 }],
 "loop": true,
 "name": &"default",
@@ -105,8 +105,7 @@ color = Color(0, 0, 0, 1)
 [node name="RobertsDrawing" type="AnimatedSprite2D" parent="UI"]
 position = Vector2(42.9297, 1051.07)
 scale = Vector2(1.00439, 1.00439)
-sprite_frames = SubResource("SpriteFrames_ijyvw")
-flip_h = true
+sprite_frames = SubResource("SpriteFrames_5xgpt")
 
 [node name="TextureRect" type="TextureRect" parent="UI"]
 layout_mode = 0

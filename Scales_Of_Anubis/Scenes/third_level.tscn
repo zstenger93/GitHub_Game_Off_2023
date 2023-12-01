@@ -3,13 +3,13 @@
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_7gq1a"]
 [ext_resource type="TileSet" uid="uid://bv5k37whdaato" path="res://Scenes/map_tile_set.tres" id="2_miyti"]
 [ext_resource type="PackedScene" uid="uid://nbces0nfq65q" path="res://Prefabs/player.tscn" id="3_bcrwo"]
-[ext_resource type="AudioStream" path="res://Audio/hit_sound_ouhhh_1.mp3" id="4_17ad8"]
+[ext_resource type="AudioStream" uid="uid://hxkkpl2441k1" path="res://Audio/hit_sound_ouhhh_1.mp3" id="4_17ad8"]
 [ext_resource type="PackedScene" uid="uid://cpxdwd2kiqmpx" path="res://Prefabs/spawner.tscn" id="4_c0aa0"]
-[ext_resource type="AudioStream" path="res://Audio/shield_sound.mp3" id="5_rbbwd"]
+[ext_resource type="AudioStream" uid="uid://canc17qpbmmjp" path="res://Audio/shield_sound.mp3" id="5_rbbwd"]
 [ext_resource type="PackedScene" uid="uid://c1cawir0qu8tp" path="res://Prefabs/enemy_base.tscn" id="5_t4mhh"]
-[ext_resource type="AudioStream" path="res://Audio/dead.mp3" id="6_q5rhn"]
-[ext_resource type="AudioStream" path="res://Audio/skeleton_hit.mp3" id="9_um41j"]
-[ext_resource type="AudioStream" path="res://Audio/gamesound.mp3" id="10_55mkl"]
+[ext_resource type="AudioStream" uid="uid://dya2k1s7gb7hx" path="res://Audio/dead.mp3" id="6_q5rhn"]
+[ext_resource type="AudioStream" uid="uid://0mdc5ruaxe1r" path="res://Audio/skeleton_hit.mp3" id="9_um41j"]
+[ext_resource type="AudioStream" uid="uid://cf13tfsqu46xp" path="res://Audio/gamesound.mp3" id="10_55mkl"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ob7kt"]
 vertices = PackedVector2Array(-704, -448, -480, -448, -480, -384, -640, -384, -704, 696, -640, 640, 416, 696, 352, 640, 416, 464, 352, 464)
