@@ -9,6 +9,7 @@ extends Node2D
 @onready var scaleLabel: Label = get_node("UI/ScaleModifier/ScaleLabel")
 @onready var sliderSpeed: Slider = get_node("UI/SpeedModifier")
 @onready var speedLabel: Label = get_node("UI/SpeedModifier/SpeedLabel")
+@onready var musicSound : AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
 
 func _on_back_pressed():
 	get_tree().change_scene_to_file("res://Scenes/intro.tscn")
@@ -28,6 +29,9 @@ func _ready():
 	spawnLabel.text = "Spawn Rate: " + str(round(GlobalVariable.spawnRate))
 	scaleLabel.text =  "Scale Modifier: " + str(GlobalVariable.scaleModifier)
 	speedLabel.text = "Enemy Speed Modifier: " + str(GlobalVariable.enemySpeed)
+	var sound = preload("res://Audio/gamesound.mp3")
+	musicSound.stream = sound
+	musicSound.play()
 
 func _on_spawn_rate_value_changed(value):
 	GlobalVariable.spawnRate = value / 10 + 1

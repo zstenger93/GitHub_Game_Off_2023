@@ -1,9 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpffit1dfr184"]
+[gd_scene load_steps=19 format=3 uid="uid://bpffit1dfr184"]
 
 [ext_resource type="Script" path="res://Scripts/intro.gd" id="1_cpjjn"]
 [ext_resource type="Texture2D" uid="uid://b1airvx1vbilx" path="res://Sprites/Enemy/AnubiFlame.png" id="2_dapr8"]
 [ext_resource type="Texture2D" uid="uid://dvhhyxgtrqr7e" path="res://Sprites/Title Screen/scalesofanubis.png" id="3_qmus7"]
 [ext_resource type="Texture2D" uid="uid://dkqd2sb31julh" path="res://Sprites/Title Screen/Bird flying.png" id="4_7kkii"]
+[ext_resource type="AudioStream" uid="uid://cf13tfsqu46xp" path="res://Audio/gamesound.mp3" id="5_nd31l"]
+[ext_resource type="AudioStream" uid="uid://bkqqnde6yspny" path="res://Audio/footsteps.mp3" id="6_7eyr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_puwhd"]
 atlas = ExtResource("4_7kkii")
@@ -155,5 +157,15 @@ offset_right = 880.0
 offset_bottom = 1000.0
 text = "SETTINGS"
 
+[node name="gamesound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_nd31l")
+volume_db = -7.785
+autoplay = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_7eyr5")
+volume_db = -12.015
+
 [connection signal="pressed" from="UI/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="UI/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="UI/Settings" to="." method="_on_settings_pressed"]

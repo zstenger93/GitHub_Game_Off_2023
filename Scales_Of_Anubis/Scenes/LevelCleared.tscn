@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bk4i0nhjh3euk"]
+[gd_scene load_steps=12 format=3 uid="uid://epa12xuh6q2g"]
 
 [ext_resource type="Texture2D" uid="uid://bm0mqjcxyfllr" path="res://Sprites/Title Screen/winscene.png" id="1_e60hr"]
 [ext_resource type="Script" path="res://Scenes/LevelCleared.gd" id="1_u05co"]
