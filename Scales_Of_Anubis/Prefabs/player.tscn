@@ -15,6 +15,9 @@
 [ext_resource type="Script" path="res://Scripts/Time.gd" id="10_5n2ps"]
 [ext_resource type="Texture2D" uid="uid://bwqy6cljnavw1" path="res://Sprites/Themes/overTime2.png" id="11_gfrq3"]
 [ext_resource type="Texture2D" uid="uid://c60mqsk0efp53" path="res://Sprites/Themes/overScale2.png" id="12_jhbqj"]
+[ext_resource type="Texture2D" uid="uid://cbs2cjn1xg8j6" path="res://Sprites/Themes/over.png" id="9_nnko8"]
+[ext_resource type="AudioStream" uid="uid://bkqqnde6yspny" path="res://Audio/footsteps.mp3" id="10_r54vg"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj1it"]
 atlas = ExtResource("2_gh2i7")
@@ -231,6 +234,9 @@ texture_progress = ExtResource("8_aek6f")
 tint_under = Color(0.392157, 0.392157, 0.392157, 1)
 tint_progress = Color(0.117647, 0.611765, 0, 1)
 script = ExtResource("10_5n2ps")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_r54vg")
+volume_db = 10.22
 
 [node name="khopesh" type="Sprite2D" parent="."]
 position = Vector2(1, 4)

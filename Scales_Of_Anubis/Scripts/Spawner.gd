@@ -5,6 +5,7 @@ extends AnimatedSprite2D
 @onready var gameController = get_node("/root/MainScene")
 @onready var sprite : AnimatedSprite2D = get_node(".")
 @onready var spawnTimer : Timer = get_node("Timer")
+@onready var gamesound : AudioStreamPlayer = get_node("../../gamesound")
 var i : int = 0
 
 func _on_timer_timeout():
