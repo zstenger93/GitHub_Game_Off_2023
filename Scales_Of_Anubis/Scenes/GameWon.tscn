@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://bpv48nhsrgw3u"]
+[gd_scene load_steps=26 format=3 uid="uid://cess6r761s778"]
 
 [ext_resource type="Script" path="res://Scripts/GameWon.gd" id="1_dtevr"]
-[ext_resource type="Texture2D" uid="uid://daotm3vt742tu" path="res://Sprites/Title Screen/Bird flying in cool maner.png" id="2_d6onv"]
+[ext_resource type="Texture2D" path="res://Sprites/Title Screen/Bird flying in cool maner.png" id="2_d6onv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rj0fc"]
 atlas = ExtResource("2_d6onv")

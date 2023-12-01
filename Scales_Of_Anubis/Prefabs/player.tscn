@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://nbces0nfq65q"]
+[gd_scene load_steps=39 format=3 uid="uid://nbces0nfq65q"]
 
 [ext_resource type="Texture2D" uid="uid://cj0ode24t66w2" path="res://Sprites/Player/walkingForward.png" id="2_gh2i7"]
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="2_jpjtu"]
@@ -8,16 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://bbnpicagfh1e4" path="res://Sprites/Player/walkingLeft.png" id="4_m6nmf"]
 [ext_resource type="Texture2D" uid="uid://exqs0nfq3jid" path="res://Sprites/Player/walkRight.png" id="5_h1oi5"]
 [ext_resource type="Texture2D" uid="uid://3s7eilrhgo8c" path="res://Sprites/Player/backwards.png" id="6_u7k0d"]
-[ext_resource type="Texture2D" uid="uid://o6yxpi24w265" path="res://Sprites/Themes/overHealth2.png" id="8_3old0"]
-[ext_resource type="Texture2D" uid="uid://by25gytocpv1p" path="res://Sprites/Themes/progressHealth.png" id="8_8d2h1"]
-[ext_resource type="Texture2D" uid="uid://0eelcy18mkv1" path="res://Sprites/Themes/progressTime.png" id="8_aek6f"]
+[ext_resource type="Texture2D" path="res://Sprites/Themes/overHealth2.png" id="8_3old0"]
+[ext_resource type="Texture2D" path="res://Sprites/Themes/progressHealth.png" id="8_8d2h1"]
+[ext_resource type="Texture2D" path="res://Sprites/Themes/progressTime.png" id="8_aek6f"]
 [ext_resource type="Script" path="res://Prefabs/TextureProgressBar.gd" id="8_stjkb"]
 [ext_resource type="Script" path="res://Scripts/Time.gd" id="10_5n2ps"]
-[ext_resource type="Texture2D" uid="uid://bwqy6cljnavw1" path="res://Sprites/Themes/overTime2.png" id="11_gfrq3"]
-[ext_resource type="Texture2D" uid="uid://c60mqsk0efp53" path="res://Sprites/Themes/overScale2.png" id="12_jhbqj"]
-[ext_resource type="Texture2D" uid="uid://cbs2cjn1xg8j6" path="res://Sprites/Themes/over.png" id="9_nnko8"]
-[ext_resource type="AudioStream" uid="uid://bkqqnde6yspny" path="res://Audio/footsteps.mp3" id="10_r54vg"]
-
+[ext_resource type="AudioStream" path="res://Audio/footsteps.mp3" id="10_r54vg"]
+[ext_resource type="Texture2D" path="res://Sprites/Themes/overTime2.png" id="11_gfrq3"]
+[ext_resource type="Texture2D" path="res://Sprites/Themes/overScale2.png" id="12_jhbqj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oj1it"]
 atlas = ExtResource("2_gh2i7")
@@ -234,6 +232,7 @@ texture_progress = ExtResource("8_aek6f")
 tint_under = Color(0.392157, 0.392157, 0.392157, 1)
 tint_progress = Color(0.117647, 0.611765, 0, 1)
 script = ExtResource("10_5n2ps")
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("10_r54vg")
 volume_db = 10.22

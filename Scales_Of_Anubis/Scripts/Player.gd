@@ -6,7 +6,6 @@ extends CharacterBody2D
 @onready var hurtsound : AudioStreamPlayer = get_node("Hurtsound")
 @onready var shieldsound : AudioStreamPlayer = get_node("ShieldSound")
 @onready var dead : AudioStreamPlayer = get_node("Dead")
-@onready var steps : AudioStreamPlayer = get_node("Steps")
 
 var baseSpeed : float = 200.0
 var speedMP : float = 8.0

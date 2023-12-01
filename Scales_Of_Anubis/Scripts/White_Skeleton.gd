@@ -12,7 +12,7 @@ extends CharacterBody2D
 @export var Damage : float = 10.0
 @export var Health : float = 10.0
 @export var OriginalDamage : float = 10.0
-@onready var hurtsound : AudioStreamPlayer = get_node("HurtsoundSkeleton")
+@onready var hurtsound : AudioStreamPlayer = get_node("/root/MainScene/HurtsoundSkeleton")
 
 func take_damage(_damage) -> float:
 #	var CurrentTime : float = Time.get_unix_time_from_system()

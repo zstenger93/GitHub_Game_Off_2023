@@ -1,7 +1,7 @@
-[gd_scene load_steps=26 format=3 uid="uid://du5i43ufr60s"]
+[gd_scene load_steps=26 format=3 uid="uid://cm07irpbwc8gf"]
 
 [ext_resource type="Script" path="res://Scripts/LoseScene.gd" id="1_qqgga"]
-[ext_resource type="Texture2D" uid="uid://bq24wuj8ghw1l" path="res://Sprites/Title Screen/aligator_dead.png" id="2_dsdyq"]
+[ext_resource type="Texture2D" path="res://Sprites/Title Screen/aligator_dead.png" id="2_dsdyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_17pyd"]
 atlas = ExtResource("2_dsdyq")

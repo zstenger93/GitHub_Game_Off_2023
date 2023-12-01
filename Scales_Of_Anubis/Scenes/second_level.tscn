@@ -3,43 +3,38 @@
 [ext_resource type="TileSet" uid="uid://bv5k37whdaato" path="res://Scenes/map_tile_set.tres" id="1_6ti6q"]
 [ext_resource type="Script" path="res://Scripts/GameController.gd" id="1_cbr87"]
 [ext_resource type="PackedScene" uid="uid://nbces0nfq65q" path="res://Prefabs/player.tscn" id="2_7u874"]
-[ext_resource type="AudioStream" uid="uid://hxkkpl2441k1" path="res://Audio/hit_sound_ouhhh_1.mp3" id="4_ktoag"]
+[ext_resource type="AudioStream" path="res://Audio/hit_sound_ouhhh_1.mp3" id="4_ktoag"]
 [ext_resource type="PackedScene" uid="uid://cpxdwd2kiqmpx" path="res://Prefabs/spawner.tscn" id="4_onmtf"]
 [ext_resource type="PackedScene" uid="uid://b0ajrimbjppvh" path="res://Prefabs/white_skeleton.tscn" id="5_8l1ot"]
-[ext_resource type="AudioStream" uid="uid://canc17qpbmmjp" path="res://Audio/shield_sound.mp3" id="5_slc1v"]
-[ext_resource type="AudioStream" uid="uid://dya2k1s7gb7hx" path="res://Audio/dead.mp3" id="6_fxj68"]
-[ext_resource type="AudioStream" uid="uid://0mdc5ruaxe1r" path="res://Audio/skeleton_hit.mp3" id="8_adl11"]
-[ext_resource type="AudioStream" uid="uid://cf13tfsqu46xp" path="res://Audio/gamesound.mp3" id="9_37wbu"]
+[ext_resource type="AudioStream" path="res://Audio/shield_sound.mp3" id="5_slc1v"]
+[ext_resource type="AudioStream" path="res://Audio/dead.mp3" id="6_fxj68"]
+[ext_resource type="AudioStream" path="res://Audio/skeleton_hit.mp3" id="8_adl11"]
+[ext_resource type="AudioStream" path="res://Audio/gamesound.mp3" id="9_37wbu"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0l1h0"]
 vertices = PackedVector2Array(-32, 88, -96, 88, -96, 24, -352, 24, -352, -32, -96, -32, -96, -96, -32, -96, 96, 24, -32, -368, 32, -368, 32, -96, 96, -96, 96, -32, 352, -32, 352, 24, 96, 88, 32, 88, 32, 368, -32, 368)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2), PackedInt32Array(2, 3, 4, 5), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(7, 9, 10, 11), PackedInt32Array(11, 12, 13), PackedInt32Array(13, 14, 15, 8), PackedInt32Array(8, 16, 17, 2, 5), PackedInt32Array(17, 18, 19, 0), PackedInt32Array(17, 0, 2), PackedInt32Array(8, 7, 11, 13)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, 368, 32, 368, 32, 88, 96, 88, 96, 24, 352, 24, 352, -32, 96, -32, 96, -96, 32, -96, 32, -368, -32, -368, -32, -96, -96, -96, -96, -32, -352, -32, -352, 24, -96, 24, -96, 88, -32, 88)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_jgfvi"]
 vertices = PackedVector2Array(-672, -680, -672, 0, -736, 0, -736, -728, 0, -728, 0, -680)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(0, 3, 4, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-672, 0, -736, 0, -736, -728, 0, -728, 0, -680, -672, -680)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_schkp"]
 vertices = PackedVector2Array(-408, -400, 0, -400, 0, -368, -352, -368, -408, 0, -352, 0)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 0, 3, 5)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-408, -400, -408, 0, -352, 0, -352, -368, 0, -368, 0, -400)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_vt4w6"]
 vertices = PackedVector2Array(-672, -32, -408, -32, -408, 24, -672, 24)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-672, -32, -408, -32, -408, 24, -672, 24)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_0jfp1"]
 vertices = PackedVector2Array(32, -680, 32, -400, -32, -400, -32, -680)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(-32, -680, -32, -400, 32, -400, 32, -680)])
-source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_cbr87")
