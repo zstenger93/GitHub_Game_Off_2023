@@ -12,9 +12,15 @@
 
 ## Control
 
-- Movement: WASD
-- Sword swing: mouse movement left-right
-- Sword throwing: right click
+- Movement
+	- Forward: W
+	- Backward: S
+	- Left: A
+	- Right: D
+- Sword swing
+	- mouse movement left-right
+- Sword throwing
+	- right click
 
 ## About
 
