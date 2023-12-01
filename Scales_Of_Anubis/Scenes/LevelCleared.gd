@@ -3,9 +3,12 @@ extends Node2D
 @onready var Anubis : AnimatedSprite2D = get_node("UI/Anubis")
 @onready var Anubis2 : AnimatedSprite2D = get_node("UI/Anubis2")
 @onready var button : Button = get_node("UI/Button")
+@onready var musicSound : AudioStreamPlayer2D = get_node("AudioStreamPlayer2D")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var sound = preload("res://Audio/gamesound.mp3")
+	musicSound.stream = sound
+	musicSound.play()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

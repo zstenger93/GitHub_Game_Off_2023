@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bmuph677jlvoe"]
+[gd_scene load_steps=8 format=3 uid="uid://bmuph677jlvoe"]
 
 [ext_resource type="Texture2D" uid="uid://by5j7c5mup618" path="res://Sprites/Title Screen/alligator (2).png" id="1_2tiru"]
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_jgqcj"]
+[ext_resource type="Texture2D" uid="uid://bu83s3dt4gp3d" path="res://Sprites/Title Screen/settings.png" id="3_r554l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uka1l"]
 atlas = ExtResource("1_2tiru")
@@ -119,6 +120,11 @@ offset_bottom = 26.0
 text = "Speed Modifier:"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[node name="Settings" type="Sprite2D" parent="."]
+position = Vector2(522, 208)
+scale = Vector2(0.59488, 0.59488)
+texture = ExtResource("3_r554l")
 
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
 [connection signal="child_entered_tree" from="UI/Time" to="." method="_on_time_child_entered_tree"]

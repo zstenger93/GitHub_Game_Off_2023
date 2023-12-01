@@ -5,7 +5,7 @@
 [ext_resource type="TileSet" uid="uid://bv5k37whdaato" path="res://Scenes/map_tile_set.tres" id="2_k6njy"]
 [ext_resource type="PackedScene" uid="uid://cpxdwd2kiqmpx" path="res://Prefabs/spawner.tscn" id="3_m0yrt"]
 [ext_resource type="AudioStream" uid="uid://hxkkpl2441k1" path="res://Audio/hit_sound_ouhhh_1.mp3" id="5_d23jo"]
-[ext_resource type="AudioStream" uid="uid://cfr8h52d35i51" path="res://Audio/steps.mp3" id="5_snt1w"]
+[ext_resource type="AudioStream" uid="uid://cfr8h52d35i51" path="res://steps.mp3" id="5_snt1w"]
 [ext_resource type="AudioStream" uid="uid://dya2k1s7gb7hx" path="res://Audio/dead.mp3" id="6_1f66l"]
 [ext_resource type="AudioStream" uid="uid://canc17qpbmmjp" path="res://Audio/shield_sound.mp3" id="6_5mw8x"]
 [ext_resource type="AudioStream" uid="uid://0mdc5ruaxe1r" path="res://Audio/skeleton_hit.mp3" id="7_j7223"]

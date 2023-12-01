@@ -102,4 +102,6 @@ offset_right = 1103.0
 offset_bottom = 980.0
 text = "CONTINUE"
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
 [connection signal="pressed" from="UI/Button" to="." method="_on_button_pressed"]
