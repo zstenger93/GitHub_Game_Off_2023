@@ -3,6 +3,9 @@ extends CharacterBody2D
 @onready var sprite : AnimatedSprite2D = get_node("Sprite")
 @onready var shield : Sprite2D = get_node("shield")
 @onready var khopesh : Sprite2D = get_node("khopesh")
+@onready var hurtsound : AudioStreamPlayer = get_node("Hurtsound")
+@onready var shieldsound : AudioStreamPlayer = get_node("ShieldSound")
+@onready var dead : AudioStreamPlayer = get_node("Dead")
 
 var baseSpeed : float = 200.0
 var speedMP : float = 8.0
@@ -32,15 +35,18 @@ func changeSceneDeath():
 		GlobalVariable.sceneGlobal = 2
 		get_tree().change_scene_to_file("res://Scenes/LoseGame.tscn")
 
+
 func take_damage(_damage):
 	health -= _damage
 	if health <= 0:
 		changeSceneDeath()
 	if _damage != shieldBlockValue:
+		hurtsound.play()
 		sprite.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		sprite.modulate = Color.WHITE
 	else:
+		shieldsound.play()
 		shield.modulate = Color.RED
 		await get_tree().create_timer(0.1).timeout
 		shield.modulate = Color.WHITE

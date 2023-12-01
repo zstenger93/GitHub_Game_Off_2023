@@ -12,11 +12,14 @@ extends CharacterBody2D
 @export var Damage : float = 14.0
 @export var Health : float = 20.0
 @export var OriginalDamage : float = 15.0
+@onready var hurtsound : AudioStreamPlayer = get_node("/root/MainScene/HurtsoundSkeleton")
 
 func take_damage(_damage) -> float:
 #	var CurrentTime : float = Time.get_unix_time_from_system()
 #	if CurrentTime - LastDamagedTime:
 	Health -= _damage
+	hurtsound.pitch_scale = randf_range(0.8, 1.2)
+	hurtsound.play()
 	Sprite.modulate = Color.RED
 	await get_tree().create_timer(0.1).timeout
 	Sprite.modulate = Color.WHITE
