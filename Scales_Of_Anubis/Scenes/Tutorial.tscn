@@ -202,7 +202,7 @@ text = "BACK"
 position = Vector2(454, 240)
 scale = Vector2(8.875, 8.875)
 sprite_frames = SubResource("SpriteFrames_icgsl")
-frame_progress = 0.203917
+frame_progress = 0.00265423
 
 [node name="RichTextLabel" type="RichTextLabel" parent="UI"]
 offset_left = 248.0
@@ -245,7 +245,7 @@ autowrap_mode = 1
 position = Vector2(1473, 233)
 scale = Vector2(8.97656, 8.97656)
 sprite_frames = SubResource("SpriteFrames_4j0dt")
-frame_progress = 0.103817
+frame_progress = 0.902555
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="UI"]
 offset_left = 1326.0

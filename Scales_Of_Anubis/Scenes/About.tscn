@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqcmtuw6utnf1"]
+[gd_scene load_steps=10 format=3 uid="uid://dqcmtuw6utnf1"]
 
 [ext_resource type="Script" path="res://Scenes/About.gd" id="1_qkcu6"]
 [ext_resource type="Texture2D" uid="uid://cboepylvl851l" path="res://Sprites/Title Screen/scales (1).png" id="2_k7c1e"]
@@ -61,6 +61,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Theme" id="Theme_0808w"]
+default_font_size = 30
+
 [node name="About" type="Node2D"]
 script = ExtResource("1_qkcu6")
 
@@ -81,8 +84,8 @@ offset_bottom = 1103.0
 color = Color(0.686275, 0.286275, 0, 1)
 
 [node name="Anubis" type="AnimatedSprite2D" parent="UI"]
-position = Vector2(337, 239)
-scale = Vector2(8.875, 8.875)
+position = Vector2(931, 322)
+scale = Vector2(19.375, 19.375)
 sprite_frames = SubResource("SpriteFrames_apf7h")
 
 [node name="Back" type="Button" parent="UI"]
@@ -92,5 +95,16 @@ offset_top = 980.0
 offset_right = 140.0
 offset_bottom = 1060.0
 text = "BACK"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 685.0
+offset_right = 1725.0
+offset_bottom = 1036.0
+theme = SubResource("Theme_0808w")
+text = "In Egyptian belief, Anubis measured the hearts of the dead on the Scale of Justice (similar to the one in \"The Substitute\"), and weighs it against the feather of Ma'at, the God of justice. This process is said to determine whether or not the person to whom the heart belongs is worthy to enter the realm of the dead.
+
+Game Made By Gergely Pásztor,  Philipp Nolte, Francesco Messina, Zsolt Stenger, Hei Yiu Tsang, Kārlis Vilhelms Vēbers, Robert Marian Dragan"
 
 [connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]
